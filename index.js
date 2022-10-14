@@ -13,12 +13,12 @@ import {
   DarkTheme as PaperDarkTheme,
   Provider as PaperProvider,
 } from 'react-native-paper';
-import {enableLatestRenderer} from 'react-native-maps';
+// import {enableLatestRenderer} from 'react-native-maps';
 import { useTheme } from '@react-navigation/native';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-enableLatestRenderer();
+// enableLatestRenderer();
 
 const Main = () => {
   const colorScheme = Appearance.getColorScheme();
