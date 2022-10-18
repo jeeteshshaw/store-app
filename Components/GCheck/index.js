@@ -1,10 +1,11 @@
 import  React,{useState} from 'react';
 import { Checkbox } from 'react-native-paper';
 
-function index(){
+function GCheck(props){
   const [check, setCheck] = useState(false);
   return (
     <Checkbox
+    style={props.style}
       status={check ? 'checked' : 'unchecked'}
       onPress={() => {
         setCheck(!check);
@@ -14,4 +15,4 @@ function index(){
   );
 };
 
-export default index;
+export default GCheck;

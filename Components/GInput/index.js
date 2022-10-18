@@ -1,22 +1,21 @@
 import {View,TextInput, StyleSheet } from 'react-native'
 import React, { useState } from 'react'
-// import { TextInput } from 'react-native-paper';
 
-function index(props){
+function GInput(props){
     const [text, setText] = useState('');
     return (
       <View style={[styles.container, props.containerStyle]}>
         <TextInput
         style={[styles.inputField,props.style]}
-
-        placeholder={props.place}
-        keyboardType={props.type}
+        placeholder={props.placeholder}
+        keyboardType={props.keyboardtype}
         onChangeText={text => setText(text)}
+        secureTextEntry={props.secureText}
         />
       </View>
     )
   }
-export default index;
+export default GInput;
 
 
 const styles = StyleSheet.create({
@@ -28,7 +27,6 @@ const styles = StyleSheet.create({
         borderRadius:80
     },
     inputField:{
-    
         height: 50,
         margin: 12,
         padding: 10,

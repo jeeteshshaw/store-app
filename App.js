@@ -22,20 +22,14 @@
 // // In App.js in a new project
 
 import * as React from 'react';
-// import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from './Screens/Auth/Login';
-
-
-
-// function HomeScreen() {
-//   return (
-//     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-//       <Text>Hello World This is HomeScreen !!</Text>
-//     </View>
-//   );
-// }
+import OTP from './Screens/Auth/OTP';
+import Signup from './Screens/Auth/Signup';
+import RPassword from './Screens/Auth/RPassword';
+import Authless_Home from './Screens/Authless/Home';
+import Enter_Email from './Screens/Auth/Email'
 
 const Stack = createNativeStackNavigator();
 
@@ -50,6 +44,11 @@ function App() {
       }}
       >
         <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="OTP" component={OTP} />
+        <Stack.Screen name="Signup" component={Signup}/>
+        <Stack.Screen name='Reset' component={RPassword}/>
+        <Stack.Screen name='Enter_Email' component={Enter_Email}/>
+        <Stack.Screen name='Skip' component={Authless_Home}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
