@@ -6,10 +6,10 @@ import GButton from '../../../Components/GButton';
 
 const Reset_Password = (props) => {
   return (
-    <View>
-      <GInput placeholder={'Enter Password'} secureText={true} keyboardtype={'email-address'}/>
-      <GInput placeholder={'Confirn Password'} secureText={true} keyboardtype={'email-address'}/>
-      <GButton data={'Continue'} press={()=>(console.warn("Continue Pressed"))}/>
+    <View style={{flex:1}}>
+      <GInput containerStyle={{height:'25%'}} placeholder={'Enter Password'} secureText={true} keyboardtype={'default'}/>
+      <GInput containerStyle={{height:'25%'}} placeholder={'Confirn Password'} secureText={true} keyboardtype={'default'}/>
+      <GButton data={'Continue'} style={{paddingButtom:20}} press={()=>(console.warn("Continue Pressed"))}/>
     </View>
   )
 }

@@ -7,11 +7,11 @@ import GButton from '../../../Components/GButton';
 const Signup = (props) => {
   return (
     <View>
-      <GInput placeholder={'Enter Email'} keyboardtype={'email-address'}/>
-      <GInput placeholder={'Enter Email'} keyboardtype={'email-address'}/>
-      <GInput placeholder={'Enter Email'} keyboardtype={'email-address'}/>
-      <GInput placeholder={'Enter Email'} keyboardtype={'email-address'}/>
-      <GButton/>
+      <GInput containerStyle={{height:'12%'}} placeholder={'Enter Email'} keyboardtype={'email-address'}/>
+      <GInput containerStyle={{height:'12%'}} placeholder={'Enter Email'} keyboardtype={'email-address'}/>
+      <GInput containerStyle={{height:'12%'}} placeholder={'Enter Email'} keyboardtype={'email-address'}/>
+      <GInput containerStyle={{height:'12%'}} placeholder={'Enter Email'} keyboardtype={'email-address'}/>
+      <GButton data={'Continue'}/>
     </View>
   )
 }

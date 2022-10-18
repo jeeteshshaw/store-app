@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 import { normalizeSize } from "../utility";
 
 
-const styles = StyleSheet.create({
+const Globalstyles = StyleSheet.create({
     container:{
         flex:1,
         // backgroundColor:"#fff",
