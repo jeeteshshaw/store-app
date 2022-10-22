@@ -6,32 +6,13 @@ import GButton from '../../../Components/GButton';
 
 const Signup = (props) => {
   return (
-    <View>
-      <GInput containerStyle={{height:'12%'}} placeholder={'Enter Email'} keyboardtype={'email-address'}/>
-      <GInput containerStyle={{height:'12%'}} placeholder={'Enter Email'} keyboardtype={'email-address'}/>
-      <GInput containerStyle={{height:'12%'}} placeholder={'Enter Email'} keyboardtype={'email-address'}/>
-      <GInput containerStyle={{height:'12%'}} placeholder={'Enter Email'} keyboardtype={'email-address'}/>
-      <GButton data={'Continue'}/>
+    <View style={{flex:1}}>
+      <GInput  placeholder={'Name'} keyboardtype={'default'}/>
+      <GInput  placeholder={'Email Address'} keyboardtype={'email-address'}/>
+      <GInput  placeholder={'Password'} keyboardtype={'default'} secureText={true} />
+      <GInput  placeholder={'Confirm Password'} secureText={true} keyboardtype={'default'}/>
+      <GButton style={{ height:'20%'}} data={'Continue'} press={()=>(props.navigation.navigate('OTP'))}/>
     </View>
   )
 }
 export default Entry(Signup);
-
-const styles = StyleSheet.create({
-  container:{
-      height:80,
-      width:380,
-      right:10,
-      marginHorizontal:20, 
-      borderRadius:80
-  },
-  inputField:{
-  
-      height: 50,
-      margin: 12,
-      padding: 10,
-      borderRadius:15,
-      backgroundColor:'white',
-      
-  }
-})

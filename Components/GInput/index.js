@@ -1,9 +1,14 @@
-import {View,TextInput, StyleSheet,Image } from 'react-native'
+import {View,TextInput, StyleSheet,Image, Touchable } from 'react-native'
 import React, { useState } from 'react'
+import { TouchableRipple } from 'react-native-paper';
 function GInput(props){
     const [text, setText] = useState('');
-    return (
-      <View style={[styles.container, props.containerStyle]}>
+
+
+    if (!props.secureText) {
+      
+      return (
+        <View style={[styles.container, props.containerStyle]}>
         <TextInput
         style={[styles.inputField,props.style]}
         placeholder={props.placeholder}
@@ -11,18 +16,33 @@ function GInput(props){
         onChangeText={text => setText(text)}
         secureTextEntry={props.secureText}
         />
-        <View style={{width:'20%',borderBottomRightRadius:15,borderTopRightRadius:15}}>
-        {/* <Image  style={styles.icon} source={require('../../assets/icons/view.svg')} /> */}
         </View>
-      </View>
-    )
+            ) 
+  }else{
+
+    return (
+      <View style={[styles.container, props.containerStyle]}>
+      <TextInput
+      style={[styles.inputField,props.style]}
+      placeholder={props.placeholder}
+      keyboardType={props.keyboardtype}
+      onChangeText={text => setText(text)}
+      secureTextEntry={props.secureText}
+      />
+      <TouchableRipple onPress={()=>(console.log('Visible'))} style={{width:'10%',justifyContent:'center'}}>
+      <Image  style={styles.icon} source={require('../../assets/icons/view_open.png')} />
+      </TouchableRipple>
+    </View>
+  )
+    
   }
-export default GInput;
+}
+  export default GInput;
 
 
 const styles = StyleSheet.create({
     container:{
-        height:'14%',
+        height:'23%',
         width:'90%',
         marginLeft:'5%',
         borderRadius:15,
@@ -42,8 +62,8 @@ const styles = StyleSheet.create({
         // backgroundColor:'tomato'
     },
     icon:{
-      height:20,
-      width:20,
+      height:30,
+      width:30,
       resizeMode:"contain"
   }
 })

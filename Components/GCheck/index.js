@@ -1,17 +1,16 @@
 import  React,{useState} from 'react';
-import { Checkbox } from 'react-native-paper';
+import CheckBox from '@react-native-community/checkbox';
+
 
 function GCheck(props){
-  const [check, setCheck] = useState(false);
+  const [toggleCheckBox, setToggleCheckBox] = useState(false)
+
   return (
-    <Checkbox
-    style={props.style}
-      status={check ? 'checked' : 'unchecked'}
-      onPress={() => {
-        setCheck(!check);
-      }}
-      uncheckedColor={'#A7A7A7'}
-    />
+    <CheckBox
+            disabled={false}
+            value={toggleCheckBox}
+            onValueChange={(newValue) => setToggleCheckBox(newValue)}
+            />
   );
 };
 

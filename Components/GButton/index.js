@@ -1,11 +1,28 @@
-import { View, Text } from 'react-native'
+import { StyleSheet, Text } from 'react-native'
 import React from 'react'
 import { TouchableRipple } from 'react-native-paper'
 
 export default function GButton(props) {
   return (
-    <TouchableRipple onPress={props.press} style={{backgroundColor:'#648D0B', height:45, width:180,borderRadius:10, alignSelf:'center'}}>
-      <Text style={{textAlign:'center', padding:10, fontSize:18,color:'black'}}>{props.data}</Text>
+    <TouchableRipple onPress={props.press} style={[Button_style.main,props.style]}>
+      <Text style={Button_style.text}>{props.data}</Text>
     </TouchableRipple>
   )
 }
+
+const Button_style = StyleSheet.create({
+ main:{
+   justifyContent:'center',
+  backgroundColor:'#648D0B',
+  height:'40%',
+  width:'50%',
+  borderRadius:10,
+  alignSelf:'center',
+},
+  text:{
+    textAlign:'center',
+    // padding:10,
+    margin:10,
+    fontSize:18,
+    color:'white'},
+});
