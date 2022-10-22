@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { ThemeLightGreen } from "../config/Colors";
 import { normalizeSize } from "../utility";
 
 
@@ -21,6 +22,11 @@ const styles = StyleSheet.create({
     center:{
         justifyContent:"center",
         alignItems:"center"
+    },
+    btn:{
+        backgroundColor: ThemeLightGreen, 
+        borderRadius: 3, 
+        padding: 8 
     },
     
     

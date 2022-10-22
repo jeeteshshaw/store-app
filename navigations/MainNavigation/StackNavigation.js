@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import Home from '../../screen/main/Home';
+import { Text, View } from 'react-native';
+import { normalizeSize } from '../../utility';
 // // import FinalSignUp from '../Screens/authScreens/signUp/FinalsignUp';
 // import { NavigationContainer, useTheme } from '@react-navigation/native';
 // import Welcome from '../../Screens/mainScreens/Welcome';
@@ -28,7 +30,13 @@ const StackNavigation = () => {
           name="Home"
           component={Home}
         
-          options={{headerShown: false}}
+          options={{
+            header:()=>(
+              <View style={{height:normalizeSize(80)}}>
+                <Text>Hello</Text>
+              </View>
+            )
+          }}
         />
         {/* <Stack.Screen
           name="BookingForm"
