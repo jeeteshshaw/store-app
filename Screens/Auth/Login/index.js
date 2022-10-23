@@ -11,13 +11,12 @@ import GCheck from '../../../Components/GCheck';
 
 const Login=(props)=>{
     return(
-        <View style={{flex:1}}>
-            <GInput containerStyle={{height:'23%'}} placeholder={"Email"}  keyboardtype={'email-address'} />
-            <GInput containerStyle={{height:'23%'}} placeholder={"Password"} secureText={true} icon={'icon'} keyboardtype={'default'}/>
+        <View >
+            <GInput  placeholder={"Email"}  keyboardtype={'email-address'} />
+            <GInput  placeholder={"Password"} secureText={true} icon={'icon'} keyboardtype={'default'}/>
             <View style={{flexDirection:'row',width:'40%',marginLeft:'10%',marginBottom:'2%',alignItems:'center'}}>
-            <GCheck
-            />
-                <Text style={{paddingLeft:10,fontSize:15,color:'white'}}>
+            <GCheck/>
+                <Text style={{paddingLeft:10,fontSize:18,color:'white'}}>
                 Remember Me
                 </Text>    
             </View>
@@ -36,8 +35,9 @@ export default Entry(Login);
 const Login_style = StyleSheet.create({
 foreget_text:{
     textAlign:'center',
-    fontSize:15,
-    color:'white',
-    paddingTop:14,
+    fontSize:18,
+    color:'#557D00',
+    // paddingTop:14,
+    // backgroundColor:'blue',
     },
 })

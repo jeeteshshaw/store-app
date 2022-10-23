@@ -21,11 +21,13 @@ import { ThemeDarkGreen, ThemeLightGreen } from '../../config/Colors';
 // import BookingForm from '../../Screens/mainScreens/BookingForm';
 import MCI from 'react-native-vector-icons/MaterialCommunityIcons';
 import Home from '../../Screens/main/Home';
+import { useDispatch } from 'react-redux';
+import { LogoutSuccessfully } from '../../store/auth';
 const Stack = createNativeStackNavigator()
 
 const StackNavigation = () => {
   // const colorScheme = Appearance.getColorScheme();
-  
+  const dispatch = useDispatch();
    
   return (
  
@@ -52,7 +54,7 @@ const StackNavigation = () => {
                       
                     </View>
                   </TouchableRipple>
-                  <TouchableRipple style={{borderColor:ThemeLightGreen, borderWidth:1, borderRadius:20, marginLeft: 16}}>
+                  <TouchableRipple onPress={()=>(dispatch(LogoutSuccessfully()))} style={{borderColor:ThemeLightGreen, borderWidth:1, borderRadius:20, marginLeft: 16}}>
                     <Image source={require("../../assets/icons/profile-user1.png")} style={{width:25, height:25, resizeMode:"contain"}} />
                   </TouchableRipple>
                 </View>

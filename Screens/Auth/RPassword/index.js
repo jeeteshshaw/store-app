@@ -9,6 +9,7 @@ const windowHeight = Dimensions.get('window').height;
 
 const Reset_Password = (props) => {
   return (
+    <View style={{height:'60%'}}>
     <View style={{flex:1}}>
       <Text style={style.text}>
         New Password
@@ -17,8 +18,9 @@ const Reset_Password = (props) => {
       <Text style={style.text}>
         Confirm Password
       </Text>
-      <GInput  placeholder={'Confirn Password'} secureText={true} keyboardtype={'default'}/>
-      <GButton style={{ height:'25%',marginTop:22}} data={'Continue'}  press={()=>(props.navigation.navigate('Skip'))}/>
+      <GInput  placeholder={'Confirm Password'} secureText={true} keyboardtype={'default'}/>
+      <GButton style={{marginTop:'1%'}} data={'Continue'}  press={()=>(props.navigation.navigate('Skip'))}/>
+    </View>
     </View>
   )
 }
