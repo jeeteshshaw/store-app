@@ -1,14 +1,25 @@
 import {View, ImageBackground, Text,StyleSheet,ScrollView,KeyboardAvoidingView } from 'react-native';
 import { TouchableRipple } from 'react-native-paper';
+import { useDispatch } from 'react-redux';
+import { LoginSuccessfully } from '../../store/auth';
 import { SCREEN_HEIGHT } from '../../utility';
 
 function Entry(Component){
-    return (props)=> (
+
+    
+
+    return (props)=>{
+        const dispatch = useDispatch();
+    
+    return (
         <View style={Entry_style.container}>
             <ScrollView style={{minHeight:SCREEN_HEIGHT,backgroundColor:'#9FCC3A'}}>
             <View style={[Entry_style.semi_container,{backgroundColor:'#A7A7A7'}]}>
                 <ImageBackground source={require('../../assets/images/mp_1.png')} resizeMode="cover" style={{flex:1,width:'100%',height:'100%'}}>
-                    <TouchableRipple onPress={()=>(props.navigation.navigate('Skip'))} style={{ backgroundColor:'black',justifyContent:'center', height:35,width:100,borderRadius:18, marginLeft:280, top:15}}>
+                    <TouchableRipple onPress={()=>{
+                        console.log("login");
+                        dispatch(LoginSuccessfully())
+                    }} style={{ backgroundColor:'black',justifyContent:'center', height:35,width:100,borderRadius:18, marginLeft:280, top:15}}>
                         <Text style={[Entry_style.agree_text,{padding:6,height:'100%',borderRadius:18}]}>Skip Login</Text>
                     </TouchableRipple>
                 </ImageBackground>
@@ -48,7 +59,7 @@ function Entry(Component){
             </KeyboardAvoidingView>
         </ScrollView>
     </View>
-    )
+    )}
 }
 export default Entry;
 

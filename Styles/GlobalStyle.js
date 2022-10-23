@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { ThemeLightGreen } from "../config/Colors";
 import { normalizeSize } from "../utility";
 
 
@@ -22,6 +23,11 @@ const Globalstyles = StyleSheet.create({
         justifyContent:"center",
         alignItems:"center"
     },
+    btn:{
+        backgroundColor: ThemeLightGreen, 
+        borderRadius: 3, 
+        padding: 8 
+    },
     
     
 
@@ -42,4 +48,4 @@ const Globalstyles = StyleSheet.create({
 
 
 
-export default styles
+export default Globalstyles;

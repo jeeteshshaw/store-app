@@ -7,14 +7,14 @@ import {
   PermissionsAndroid,
   Alert,
 } from 'react-native';
-import {showMessage} from 'react-native-flash-message';
-// import RNFetchBlob from 'rn-fetch-blob';
-// import {RNS3} from 'react-native-upload-aws-s3';
-// import Toast from 'react-native-simple-toast';
+// import {showMessage} from 'react-native-flash-message';
+// // import RNFetchBlob from 'rn-fetch-blob';
+// // import {RNS3} from 'react-native-upload-aws-s3';
+// // import Toast from 'react-native-simple-toast';
 
-export const showToast=(msg, length='SHORT')=>{
-  Toast.show(msg, Toast[length]);
-}
+// export const showToast=(msg, length='SHORT')=>{
+//   Toast.show(msg, Toast[length]);
+// }
 
 
 export const {width: SCREEN_WIDTH, height: SCREEN_HEIGHT} =
@@ -50,117 +50,117 @@ export const normalizeSize = (size, lgSize = 0, smSize = 0) => {
 //     });
 //   }
 // };
-// export const downLoadFile = async (hr_doc_Url, document_file) => {
-//   console.log('hr_doc_Url', hr_doc_Url);
-//   if (Platform.OS == 'ios') {
-//     Alert.alert(
-//       '',
-//       'Are you sure to download this file?',
-//       [
-//         {
-//           text: 'No',
-//           onPress: () => null,
-//           style: 'cancel',
-//         },
-//         {
-//           text: 'Yes',
-//           onPress: () => actualDownload(hr_doc_Url, document_file),
-//         },
-//       ],
-//       {cancelable: false},
-//     );
-//   } else {
-//     try {
-//       const granted = await PermissionsAndroid.request(
-//         PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
-//       );
-//       if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-//         Alert.alert(
-//           '',
-//           'Are you sure to download this file?',
-//           [
-//             {
-//               text: 'No',
-//               onPress: () => null,
-//               style: 'cancel',
-//             },
-//             {
-//               text: 'Yes',
-//               onPress: () => actualDownload(hr_doc_Url, document_file),
-//             },
-//           ],
-//           {cancelable: false},
-//         );
-//       } else {
-//         Alert.alert(
-//           'Permission Denied!',
-//           'You need to give storage permission to download the file',
-//         );
-//       }
-//     } catch (err) {
-//       console.warn(err);
-//       console.log('erroororororo', err);
-//     }
-//   }
-// };
+// // export const downLoadFile = async (hr_doc_Url, document_file) => {
+// //   console.log('hr_doc_Url', hr_doc_Url);
+// //   if (Platform.OS == 'ios') {
+// //     Alert.alert(
+// //       '',
+// //       'Are you sure to download this file?',
+// //       [
+// //         {
+// //           text: 'No',
+// //           onPress: () => null,
+// //           style: 'cancel',
+// //         },
+// //         {
+// //           text: 'Yes',
+// //           onPress: () => actualDownload(hr_doc_Url, document_file),
+// //         },
+// //       ],
+// //       {cancelable: false},
+// //     );
+// //   } else {
+// //     try {
+// //       const granted = await PermissionsAndroid.request(
+// //         PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
+// //       );
+// //       if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+// //         Alert.alert(
+// //           '',
+// //           'Are you sure to download this file?',
+// //           [
+// //             {
+// //               text: 'No',
+// //               onPress: () => null,
+// //               style: 'cancel',
+// //             },
+// //             {
+// //               text: 'Yes',
+// //               onPress: () => actualDownload(hr_doc_Url, document_file),
+// //             },
+// //           ],
+// //           {cancelable: false},
+// //         );
+// //       } else {
+// //         Alert.alert(
+// //           'Permission Denied!',
+// //           'You need to give storage permission to download the file',
+// //         );
+// //       }
+// //     } catch (err) {
+// //       console.warn(err);
+// //       console.log('erroororororo', err);
+// //     }
+// //   }
+// // };
 
-// export const actualDownload = (hr_doc_Url, document_file) => {
-//   if (document_file === null || document_file === '') {
-//     showFlashMessage('No file name found', '', 'danger');
-//     return;
-//   }
+// // export const actualDownload = (hr_doc_Url, document_file) => {
+// //   if (document_file === null || document_file === '') {
+// //     showFlashMessage('No file name found', '', 'danger');
+// //     return;
+// //   }
 
-//   // const dirs = RNFetchBlob.fs.dirs;
-//   const dirToSave = Platform.OS == 'ios' ? dirs.DocumentDir : dirs.DownloadDir;
-//   console.log('>>>>', document_file);
+// //   // const dirs = RNFetchBlob.fs.dirs;
+// //   const dirToSave = Platform.OS == 'ios' ? dirs.DocumentDir : dirs.DownloadDir;
+// //   console.log('>>>>', document_file);
 
-//   const configfb = {
-//     fileCache: true,
-//     useDownloadManager: true,
-//     notification: true,
-//     mediaScannable: true,
-//     title: `${document_file}`,
-//     path: `${dirToSave}/${document_file}`,
-//   };
-//   const configOptions = Platform.select({
-//     ios: {
-//       fileCache: configfb.fileCache,
-//       title: configfb.title,
-//       path: configfb.path,
-//       appendExt: `${document_file.split('.')[1]}`,
-//     },
-//     android: configfb,
-//   });
+// //   const configfb = {
+// //     fileCache: true,
+// //     useDownloadManager: true,
+// //     notification: true,
+// //     mediaScannable: true,
+// //     title: `${document_file}`,
+// //     path: `${dirToSave}/${document_file}`,
+// //   };
+// //   const configOptions = Platform.select({
+// //     ios: {
+// //       fileCache: configfb.fileCache,
+// //       title: configfb.title,
+// //       path: configfb.path,
+// //       appendExt: `${document_file.split('.')[1]}`,
+// //     },
+// //     android: configfb,
+// //   });
 
-//   console.log(`${hr_doc_Url + document_file}`);
+// //   console.log(`${hr_doc_Url + document_file}`);
 
-//   // RNFetchBlob.config(configOptions)
-//   //   // .fetch('GET', `${hr_doc_Url + document_file}`, {})
-//   //   .fetch('GET', `${hr_doc_Url}`, {})
+// //   // RNFetchBlob.config(configOptions)
+// //   //   // .fetch('GET', `${hr_doc_Url + document_file}`, {})
+// //   //   .fetch('GET', `${hr_doc_Url}`, {})
 
-//   //   .then(res => {
-//   //     if (Platform.OS === 'ios') {
-//   //       RNFetchBlob.fs.writeFile(configfb.path, res.data, 'base64');
-//   //       RNFetchBlob.ios.previewDocument(configfb.path);
-//   //     }
-//   //     // setisdownloaded(false);
-//   //     if (Platform.OS == 'android') {
-//   //       showFlashMessage(`File downloaded successfully..`, '', 'success');
-//   //       console.log(res);
-//   //     }
+// //   //   .then(res => {
+// //   //     if (Platform.OS === 'ios') {
+// //   //       RNFetchBlob.fs.writeFile(configfb.path, res.data, 'base64');
+// //   //       RNFetchBlob.ios.previewDocument(configfb.path);
+// //   //     }
+// //   //     // setisdownloaded(false);
+// //   //     if (Platform.OS == 'android') {
+// //   //       showFlashMessage(`File downloaded successfully..`, '', 'success');
+// //   //       console.log(res);
+// //   //     }
 
-//   //     // console.log('The file saved to ', res.data);
-//   //     // console.log('The file saved to ', res.respInfo.headers['Content-Type']);
+// //   //     // console.log('The file saved to ', res.data);
+// //   //     // console.log('The file saved to ', res.respInfo.headers['Content-Type']);
      
-//   //   })
-//   //   .catch(e => {
-//   //     // setisdownloaded(true);
-//   //     // showSnackbar(e.message);
-//   //     showFlashMessage(e.message, '', 'danger');
-//   //     // console.log('The file saved to ERROR', e.message);
-//   //   });
+// //   //   })
+// //   //   .catch(e => {
+// //   //     // setisdownloaded(true);
+// //   //     // showSnackbar(e.message);
+// //   //     showFlashMessage(e.message, '', 'danger');
+// //   //     // console.log('The file saved to ERROR', e.message);
+// //   //   });
    
-// };
+// // };
 
 // const downloadFile = () => {
 //   // Get today's date to add the time suffix in filename
@@ -310,6 +310,57 @@ export const normalizeSize = (size, lgSize = 0, smSize = 0) => {
 //   } catch (error) {
 //     console.log('error', error);
 //   }
+
+//   // const dirs = RNFetchBlob.fs.dirs;
+//   const dirToSave = Platform.OS == 'ios' ? dirs.DocumentDir : dirs.DownloadDir;
+//   console.log('>>>>', document_file);
+
+//   const configfb = {
+//     fileCache: true,
+//     useDownloadManager: true,
+//     notification: true,
+//     mediaScannable: true,
+//     title: `${document_file}`,
+//     path: `${dirToSave}/${document_file}`,
+//   };
+//   const configOptions = Platform.select({
+//     ios: {
+//       fileCache: configfb.fileCache,
+//       title: configfb.title,
+//       path: configfb.path,
+//       appendExt: `${document_file.split('.')[1]}`,
+//     },
+//     android: configfb,
+//   });
+
+//   console.log(`${hr_doc_Url + document_file}`);
+
+//   // RNFetchBlob.config(configOptions)
+//   //   // .fetch('GET', `${hr_doc_Url + document_file}`, {})
+//   //   .fetch('GET', `${hr_doc_Url}`, {})
+
+//   //   .then(res => {
+//   //     if (Platform.OS === 'ios') {
+//   //       RNFetchBlob.fs.writeFile(configfb.path, res.data, 'base64');
+//   //       RNFetchBlob.ios.previewDocument(configfb.path);
+//   //     }
+//   //     // setisdownloaded(false);
+//   //     if (Platform.OS == 'android') {
+//   //       showFlashMessage(`File downloaded successfully..`, '', 'success');
+//   //       console.log(res);
+//   //     }
+
+//   //     // console.log('The file saved to ', res.data);
+//   //     // console.log('The file saved to ', res.respInfo.headers['Content-Type']);
+     
+//   //   })
+//   //   .catch(e => {
+//   //     // setisdownloaded(true);
+//   //     // showSnackbar(e.message);
+//   //     showFlashMessage(e.message, '', 'danger');
+//   //     // console.log('The file saved to ERROR', e.message);
+//   //   });
+   
 // };
 
 // export const meteorAsyncCall = (...params) => {
