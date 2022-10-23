@@ -14,7 +14,7 @@ const Enter_Email = (props) => {
       placeholder={'Enter Email'}
       keyboardtype={'email-address'}
       />
-      <GButton style={{ height:'25%'}} data={'Continue'} press={()=>(props.navigation.navigate('OTP'))}/>
+      <GButton data={'Continue'} press={()=>(props.navigation.navigate('OTP'))}/>
     </View>
   )
 }
@@ -25,7 +25,7 @@ const Email_Style = StyleSheet.create({
     text_style:{
       textAlign:'center',
       color:'white', 
-      fontSize:20,
+      fontSize:23,
       width:'37%',
       paddingBottom:'4%'
     },

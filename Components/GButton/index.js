@@ -14,7 +14,7 @@ const Button_style = StyleSheet.create({
  main:{
    justifyContent:'center',
   backgroundColor:'#648D0B',
-  height:'40%',
+  height:37,
   width:'50%',
   borderRadius:10,
   alignSelf:'center',
@@ -23,6 +23,7 @@ const Button_style = StyleSheet.create({
     textAlign:'center',
     // padding:10,
     margin:10,
+    height:'70%',
     fontSize:18,
     color:'white'},
 });

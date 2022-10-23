@@ -11,7 +11,7 @@ const Signup = (props) => {
       <GInput  placeholder={'Email Address'} keyboardtype={'email-address'}/>
       <GInput  placeholder={'Password'} keyboardtype={'default'} secureText={true} />
       <GInput  placeholder={'Confirm Password'} secureText={true} keyboardtype={'default'}/>
-      <GButton style={{ height:'20%'}} data={'Continue'} press={()=>(props.navigation.navigate('OTP'))}/>
+      <GButton data={'Continue'} press={()=>(props.navigation.navigate('OTP'))}/>
     </View>
   )
 }

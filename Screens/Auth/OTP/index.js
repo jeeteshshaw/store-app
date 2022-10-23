@@ -12,9 +12,9 @@ import Entry from '../Entry';
                     <Text style={OTP_Style.text_style}>
                       ENTER  OTP
                     </Text>
-                    <GInput containerStyle={{height:'30%'}} placeholder={"OTP"} keyboardtype={'numeric'}/>
+                    <GInput  placeholder={"OTP"} keyboardtype={'numeric'}/>
             </View>
-            <GButton style={{height:'25%'}} data={"Continue"} press={()=>(props.navigation.navigate('Reset'))}/>
+            <GButton  data={"Continue"} press={()=>(props.navigation.navigate('Reset'))}/>
         </View>
         )
     }
@@ -27,7 +27,7 @@ import Entry from '../Entry';
         text_style:{
           textAlign:'center',
           color:'white', 
-          fontSize:20,
+          fontSize:23,
           width:'37%',
           paddingBottom:'4%'
         },
