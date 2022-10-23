@@ -22,17 +22,19 @@
 // // In App.js in a new project
 
 import * as React from 'react';
-import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AuthScreenNavigation from './navigations/AuthNavigations';
 import StackNavigation from './navigations/MainNavigation/StackNavigation';
+import { useSelector } from 'react-redux';
 
 
 const Stack = createNativeStackNavigator();
 
 function App() {
-  const token = "sadas";
+  // const token = "sadas";
+  const token = useSelector(state=>(state.auth.token));
+  console.log({token});
   return (
     <NavigationContainer>
       {

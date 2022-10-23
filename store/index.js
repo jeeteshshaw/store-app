@@ -1,12 +1,12 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { configureStore, getDefaultMiddleware, combineReducers } from '@reduxjs/toolkit';
 import { persistReducer, persistStore } from 'redux-persist';
-// import auth from './auth';
+import auth from './auth';
 import common from './common';
 // import user from './user';
 
 const rootReducer = combineReducers({
-    // auth:auth,
+    auth:auth,
     common:common,
     // user:user
 });

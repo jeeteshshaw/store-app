@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import Home from '../../screen/main/Home';
 import { Image, Text, TextInput, View } from 'react-native';
 import { normalizeSize } from '../../utility';
 import GS from "../../Styles/GlobalStyle"
@@ -21,6 +20,7 @@ import { ThemeDarkGreen, ThemeLightGreen } from '../../config/Colors';
 // import { useEffect } from 'react';
 // import BookingForm from '../../Screens/mainScreens/BookingForm';
 import MCI from 'react-native-vector-icons/MaterialCommunityIcons';
+import Home from '../../Screens/main/Home';
 const Stack = createNativeStackNavigator()
 
 const StackNavigation = () => {
@@ -36,7 +36,7 @@ const StackNavigation = () => {
         
           options={{
             header:()=>(
-              <View style={{height:normalizeSize(80)}}>
+              <View style={{height:normalizeSize(75), backgroundColor:"#fff"}}>
                 <View style={[GS.row_Between,{padding:10, paddingHorizontal:16}]}>
                   <View style={{width:"50%", flexDirection:"row",alignItems:"flex-start"}}>
                   <Image source={require("../../assets/icons/pin3.png")} style={GS.icon} />
@@ -44,8 +44,13 @@ const StackNavigation = () => {
                     <Rtext style={{textAlign:"center", color:ThemeDarkGreen}} fontSize={10}>2/4 Anandabhaban, Kolkata, 700001, West Bengal, India</Rtext>
 
                   </View>
-                  <TouchableRipple style={{borderColor:ThemeLightGreen, borderWidth:1, borderRadius:20, marginLeft: 16}}>
-                    <Rtext style={{color:ThemeLightGreen, margin:4, marginHorizontal:16}} fontSize={10}>Select Vendor <MCI name='menu-down' size={12} /></Rtext>
+                  <TouchableRipple style={[{borderColor:ThemeLightGreen, borderWidth:1, borderRadius:20, marginLeft: 16}]}>
+                    <View style={[GS.row,{margin:4, marginHorizontal:10}]}>
+                    <Rtext style={{color:ThemeLightGreen}} fontSize={10}>Select Vendor </Rtext>
+                    {/* <MCI name='menu-down' size={16} color={ThemeLightGreen} /> */}
+                    <Image source={require("../../assets/icons/down-filled1.png")} style={{width:6,height:6, resizeMode:"contain"}} />
+                      
+                    </View>
                   </TouchableRipple>
                   <TouchableRipple style={{borderColor:ThemeLightGreen, borderWidth:1, borderRadius:20, marginLeft: 16}}>
                     <Image source={require("../../assets/icons/profile-user1.png")} style={{width:25, height:25, resizeMode:"contain"}} />

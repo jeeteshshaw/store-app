@@ -3,7 +3,7 @@ import { ThemeLightGreen } from "../config/Colors";
 import { normalizeSize } from "../utility";
 
 
-const styles = StyleSheet.create({
+const Globalstyles = StyleSheet.create({
     container:{
         flex:1,
         // backgroundColor:"#fff",
@@ -48,4 +48,4 @@ const styles = StyleSheet.create({
 
 
 
-export default styles
+export default Globalstyles;

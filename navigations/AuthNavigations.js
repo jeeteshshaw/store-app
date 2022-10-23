@@ -1,5 +1,12 @@
 import React from 'react';
-import { Text } from 'react-native';
+import Login from '../Screens/Auth/Login';
+import OTP from '../Screens/Auth/OTP';
+import Signup from '../Screens/Auth/Signup';
+import RPassword from '../Screens/Auth/RPassword';
+import Enter_Email from '../Screens/Auth/Email';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+// import Authless_Home from '../Screens/Authless';
+
 // import Login from '../Screens/authScreens/Login';
 // import { createStackNavigator } from '@react-navigation/stack'
 // import SignUp from '../Screens/authScreens/SignUp';
@@ -13,37 +20,27 @@ import { Text } from 'react-native';
 // import { Appearance } from 'react-native';
 // import { useState } from 'react';
 
-// const Stack = createStackNavigator()
+const Stack = createNativeStackNavigator()
 
 const AuthScreenNavigation = () => {
   
   // const colorScheme = Appearance.getColorScheme();
   
-  return <Text>Auth Stack</Text>
   return (
- 
-    <NavigationContainer theme={colorScheme==="dark"?CustomDarkTheme:CustomDefaultTheme}>
-      {/* <Stack.Navigator initialRouteName="Welcome">
-        <Stack.Screen
-          name="Welcome"
-          component={Welcome}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="Login"
-          component={Login}
-          options={{headerShown: false}}
-        />
-
-         <Stack.Screen
-          name="Signup"
-          component={SignUp}
-          options={{headerShown: false}}
-        />
-       </Stack.Navigator> */}
-
-      
-    </NavigationContainer> 
+           <Stack.Navigator
+      screenOptions={{
+        headerTintColor: 'white',
+        headerStyle: { backgroundColor: 'tomato' },
+        headerShown:false,
+      }}
+      >
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="OTP" component={OTP} />
+        <Stack.Screen name="Signup" component={Signup}/>
+        <Stack.Screen name='Reset' component={RPassword}/>
+        <Stack.Screen name='Enter_Email' component={Enter_Email}/>
+        {/* <Stack.Screen name='Skip' component={Authless_Home}/> */}
+      </Stack.Navigator>     
   );
 };
 
