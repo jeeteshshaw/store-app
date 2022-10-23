@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
         borderBottomRightRadius:0,
         borderTopRightRadius:0,
         marginLeft:'5%',
+        color:'#000'
         // backgroundColor:'tomato'
     },
     icon:{

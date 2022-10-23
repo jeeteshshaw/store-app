@@ -13,7 +13,7 @@ function Entry(Component){
                     </TouchableRipple>
                 </ImageBackground>
             </View>
-            <View style={{backgroundColor:'tomato', height:SCREEN_HEIGHT*0.55}}>
+            <View style={{height:SCREEN_HEIGHT*0.55}}>
                 <View style={{flex:1}} >
                     <View>
                         <View style={{paddingTop:22}}>
@@ -36,7 +36,7 @@ function Entry(Component){
                     <View style={{flex:1}}>
                     <Component {...props}/>    
                     </View>
-                    <View style={{backgroundColor:'blue', height:50}}>
+                    <View style={{height:50}}>
                         <Text style={Entry_style.agree_text}>
                             By continuing, you agree to our Terms of 
                         </Text>

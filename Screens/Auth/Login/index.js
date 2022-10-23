@@ -11,7 +11,7 @@ import GCheck from '../../../Components/GCheck';
 
 const Login=(props)=>{
     return(
-        <View style={{backgroundColor:'tomato'}}>
+        <View >
             <GInput  placeholder={"Email"}  keyboardtype={'email-address'} />
             <GInput  placeholder={"Password"} secureText={true} icon={'icon'} keyboardtype={'default'}/>
             <View style={{flexDirection:'row',width:'40%',marginLeft:'10%',marginBottom:'2%',alignItems:'center'}}>

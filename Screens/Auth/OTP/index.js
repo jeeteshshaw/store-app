@@ -20,7 +20,6 @@ import Entry from '../Entry';
     }
 
     export default Entry(OTP);
-    // export default Entry(Enter_OTP)
 
 
     const OTP_Style = StyleSheet.create({
@@ -29,6 +28,6 @@ import Entry from '../Entry';
           color:'white', 
           fontSize:23,
           width:'37%',
-          paddingBottom:'4%'
+          paddingBottom:10,
         },
         })
