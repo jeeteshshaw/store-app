@@ -1,13 +1,22 @@
-import { FlatList, Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { FlatList, Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import React, { useCallback } from 'react'
 import { CategoryList } from '../../../store/static'
 import { normalizeSize, SCREEN_WIDTH } from '../../../utility'
 import { Rtext } from '../../../Components/Rtext'
 import { ThemeLightGreen } from '../../../config/Colors'
 import Styles from '../../../Styles'
 import GS from '../../../Styles/GlobalStyle'
+import { useNavigation } from '@react-navigation/native'
 
 const CategoryListing = () => {
+    const navigation = useNavigation();
+    const onSelectCategory = useCallback(
+      () => {
+        return navigation.navigate("ProductListing")
+      },
+      [],
+    )
+    
     return (
         <ImageBackground style={styles.container} source={require("../../../assets/images/linear_gradient_light_green_bg.png")} resizeMode="cover">
 
@@ -20,7 +29,7 @@ const CategoryListing = () => {
                 listKey={"CategoryList"}
 
                 renderItem={({ item, index }) => (
-                    <RenderItemCard item={item} index={index} />
+                    <RenderItemCard item={item} index={index} onPress={onSelectCategory} />
                 )}
             />
         </ImageBackground >
@@ -29,12 +38,12 @@ const CategoryListing = () => {
 
 export default CategoryListing;
 
-const RenderItemCard = React.memo(({ item, index }) => (
+const RenderItemCard = React.memo(({ item, index,onPress }) => (
 
-    <View style={[styles.cardContainer, GS.center]}>
+    <TouchableOpacity onPress={onPress} style={[styles.cardContainer, GS.center]}>
         <Image source={item.image} style={styles.cardImg} />
         <Rtext fontSize={11} style={styles.cardText} numberOfLines={3}>{item.title}</Rtext>
-    </View>
+    </TouchableOpacity>
 ));
 
 
