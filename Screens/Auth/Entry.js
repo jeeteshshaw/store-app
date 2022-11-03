@@ -4,8 +4,8 @@ import { SCREEN_HEIGHT } from '../../utility';
 
 function Entry(Component){
     return (props)=> (
-        <View style={Entry_style.container}>
-            <ScrollView style={{minHeight:SCREEN_HEIGHT,backgroundColor:'#9FCC3A'}}>
+        <KeyboardAvoidingView style={Entry_style.container}>
+            <ScrollView scrollEnabled={true} style={{minHeight:SCREEN_HEIGHT,backgroundColor:'#9FCC3A'}}>
             <View style={[Entry_style.semi_container,{backgroundColor:'#A7A7A7'}]}>
                 <ImageBackground source={require('../../assets/images/mp_1.png')} resizeMode="cover" style={{flex:1,width:'100%',height:'100%'}}>
                     <TouchableRipple onPress={()=>(props.navigation.navigate('Skip'))} style={{ backgroundColor:'black',justifyContent:'center', height:35,width:100,borderRadius:18, marginLeft:280, top:15}}>
@@ -36,18 +36,15 @@ function Entry(Component){
                     <View style={{flex:1}}>
                     <Component {...props}/>    
                     </View>
-                    <View style={{height:50}}>
-                        <Text style={Entry_style.agree_text}>
-                            By continuing, you agree to our Terms of 
-                        </Text>
-                        <Text style={Entry_style.agree_text}>
-                            service & Privacy policy
+                    <View style={{height:50, width:250,alignItems:'center',alignContent:'center',marginHorizontal:75}}>
+                        <Text style={[Entry_style.agree_text,{textAlign:'center'}]}>
+                            By continuing, you agree to our Terms of service & Privacy policy
                         </Text>
                     </View>
                 </View>
             </View>
         </ScrollView>
-    </View>
+    </KeyboardAvoidingView>
     )
 }
 export default Entry;
@@ -63,6 +60,8 @@ const Entry_style = StyleSheet.create({
         color:'white',
         textAlign:'center',
         fontSize:13,
+        height:'100%',
+        width:'100%'
     },
     text_Log:{
         textAlign:'center',

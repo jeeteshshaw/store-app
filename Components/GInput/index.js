@@ -3,36 +3,32 @@ import React, { useState } from 'react'
 import { TouchableRipple } from 'react-native-paper';
 function GInput(props){
     const [text, setText] = useState('');
-
-
     if (!props.secureText) {
-      
       return (
-        <View style={[styles.container, props.containerStyle]}>
-        <TextInput
-        style={[styles.inputField,props.style]}
-        placeholder={props.placeholder}
-        keyboardType={props.keyboardtype}
-        onChangeText={text => setText(text)}
-        secureTextEntry={props.secureText}
-        />
-        </View>
+                <View style={[styles.container, props.containerStyle]}>
+                <TextInput
+                style={[styles.inputField,props.style]}
+                placeholder={props.placeholder}
+                keyboardType={props.keyboardtype}
+                onChangeText={text => setText(text)}
+                secureTextEntry={props.secureText}
+                />
+                </View>
             ) 
   }else{
-
     return (
-      <View style={[styles.container, props.containerStyle]}>
-      <TextInput
-      style={[styles.inputField,props.style]}
-      placeholder={props.placeholder}
-      keyboardType={props.keyboardtype}
-      onChangeText={text => setText(text)}
-      secureTextEntry={props.secureText}
-      />
-      <TouchableRipple onPress={()=>(console.log('Visible'))} style={{width:'10%',justifyContent:'center'}}>
-      <Image  style={styles.icon} source={require('../../assets/icons/view_open.png')} />
-      </TouchableRipple>
-    </View>
+                <View style={[styles.container, props.containerStyle]}>
+                <TextInput
+                style={[styles.inputField,props.style]}
+                placeholder={props.placeholder}
+                keyboardType={props.keyboardtype}
+                onChangeText={text => setText(text)}
+                secureTextEntry={props.secureText}
+                />
+                <TouchableRipple onPress={()=>(console.log('Visible'))} style={{width:'10%',justifyContent:'center'}}>
+                <Image  style={styles.icon} source={require('../../assets/icons/view_open.png')} />
+                </TouchableRipple>
+              </View>
   )
     
   }
@@ -42,7 +38,7 @@ function GInput(props){
 
 const styles = StyleSheet.create({
     container:{
-        height:37,
+        height:40,
         width:'90%',
         marginLeft:'5%',
         borderRadius:15,

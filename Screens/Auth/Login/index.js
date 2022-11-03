@@ -4,6 +4,7 @@ import Entry from '../Entry';
 import GButton from '../../../Components/GButton';
 import GInput from '../../../Components/GInput';
 import GCheck from '../../../Components/GCheck';
+import GModal from '../../../Components/GModal';
 
 
 
@@ -21,7 +22,7 @@ const Login=(props)=>{
                 </Text>    
             </View>
             <View>
-                <GButton data={"Continue"}  press={()=>(props.navigation.navigate('Skip'))}/>
+                <GButton data={"Continue"}  press={()=>console.log("Clicked !!")}/>
                 <Text onPress={()=>(props.navigation.navigate('Enter_Email'))} style={Login_style.foreget_text}>
                     Forget Password
                 </Text>

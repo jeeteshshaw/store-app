@@ -7,15 +7,15 @@ import Entry from '../Entry';
 
     function OTP(props) {
         return(
-            <View style={{flex:1}}>
-            <View style={{flex:1, justifyContent:'center',alignItems:'center'}} >
-                    <Text style={OTP_Style.text_style}>
-                      ENTER  OTP
-                    </Text>
-                    <GInput  placeholder={"OTP"} keyboardtype={'numeric'}/>
-            </View>
-            <GButton  data={"Continue"} press={()=>(props.navigation.navigate('Reset'))}/>
+        <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
+            <Text style={OTP_Style.text_style}> Enter OTP</Text>
+            <GInput
+            placeholder={'OTP'}
+            keyboardtype={'numeric'}
+            />
+            <GButton style={{marginTop:20}} data={'Continue'} press={()=>(props.navigation.navigate('Reset'))}/>
         </View>
+
         )
     }
 

@@ -1,13 +1,17 @@
 import { Text,View,Dimensions,StyleSheet} from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import Entry from '../Entry'
 import GInput from '../../../Components/GInput';
 import GButton from '../../../Components/GButton';
-
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
+import GModal from '../../../Components/GModal';
 
 const Reset_Password = (props) => {
+  const [modalactivity, setModalActivity] = useState(false)
+    const UpdatingState=()=>{
+        setModalActivity(false);
+        props.navigation.navigate('Login');
+    }
+
   return (
     <View style={{height:'60%'}}>
     <View style={{flex:1}}>
@@ -19,7 +23,8 @@ const Reset_Password = (props) => {
         Confirm Password
       </Text>
       <GInput  placeholder={'Confirm Password'} secureText={true} keyboardtype={'default'}/>
-      <GButton style={{marginTop:'1%'}} data={'Continue'}  press={()=>(props.navigation.navigate('Skip'))}/>
+      <GButton style={{marginTop:'1%'}} data={'Continue'}   press={()=>setModalActivity(!modalactivity)}/>
+      <GModal modalVisible={modalactivity} text={"You have successfully changed your password."} modalVisiblity={UpdatingState} />
     </View>
     </View>
   )

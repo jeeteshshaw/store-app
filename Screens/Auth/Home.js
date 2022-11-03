@@ -1,12 +1,10 @@
-import { Text, View } from 'react-native'
-import React, { Component } from 'react'
+import { View, Text } from 'react-native'
+import React from 'react'
 
- function Home() {
-    return (
-      <View>
-        <Text>Home with Auth</Text>
-      </View>
-    )
-  }
-
-export default Home
+export default function Home() {
+  return (
+    <View>
+      <Text>Home Screen</Text>
+    </View>
+  )
+}

@@ -28,9 +28,8 @@ import Login from './Screens/Auth/Login';
 import OTP from './Screens/Auth/OTP';
 import Signup from './Screens/Auth/Signup';
 import RPassword from './Screens/Auth/RPassword';
-import Authless_Home from './Screens/Authless/Home';
 import Enter_Email from './Screens/Auth/Email'
-
+import Home from './Screens/Auth/Home';
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -48,7 +47,7 @@ function App() {
         <Stack.Screen name="Signup" component={Signup}/>
         <Stack.Screen name='Reset' component={RPassword}/>
         <Stack.Screen name='Enter_Email' component={Enter_Email}/>
-        <Stack.Screen name='Skip' component={Authless_Home}/>
+        <Stack.Screen name='Skip' component={Home}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

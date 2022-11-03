@@ -10,6 +10,7 @@ function GCheck(props){
             disabled={false}
             value={toggleCheckBox}
             onValueChange={(newValue) => setToggleCheckBox(newValue)}
+            tintColors={{false: '#FFFFFF' }}
             />
   );
 };
