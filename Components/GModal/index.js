@@ -1,5 +1,6 @@
 import { View, Text, Modal,Alert,StyleSheet, Pressable, Image} from 'react-native'
 import React, { useState } from 'react'
+import { Fonts } from '../../utility/CommonFonts';
 
 export default function GModal(props) {
 
@@ -20,7 +21,7 @@ export default function GModal(props) {
             >
               <Image source={require('../../assets/icons/check.png')} style={{ height:40,width:40}}  />
             </Pressable>
-            <Text style={{fontSize:22,color:'white', marginLeft:15}}>{props.text}</Text>
+            <Text style={[{fontSize:22,color:'white', marginLeft:15},Fonts.Bold]}>{props.text}</Text>
           </View>
         </View>
       </Modal>

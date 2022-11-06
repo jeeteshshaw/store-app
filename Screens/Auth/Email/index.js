@@ -3,18 +3,20 @@ import React from 'react'
 import Entry from '../Entry'
 import GInput from '../../../Components/GInput'
 import GButton from '../../../Components/GButton'
+import {Fonts} from '../../../utility/CommonFonts'
 
 
 
 const Enter_Email = (props) => {
+
   return (
     <View style={{flex:1, justifyContent:'center',alignItems:'center'}}>
-      <Text style={Email_Style.text_style}> Enter Email</Text>
+      <Text style={[Email_Style.text_style,Fonts.Bold]}> Enter Email</Text>
       <GInput
       placeholder={'Enter Email'}
       keyboardtype={'email-address'}
       />
-      <GButton style={{marginTop:20}} data={'Continue'} press={()=>(props.navigation.navigate('OTP'))}/>
+      <GButton style={{marginTop:20}} data={'Continue'} press={()=>(props.navigation.navigate('OTP',{isSignUp:false}))}/>
     </View>
   )
 }
@@ -26,7 +28,7 @@ const Email_Style = StyleSheet.create({
       textAlign:'center',
       color:'white', 
       fontSize:23,
-      width:'37%',
+      width:'40%',
       paddingBottom:'4%'
     },
     })

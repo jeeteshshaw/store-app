@@ -1,10 +1,11 @@
 import { StyleSheet, Text } from 'react-native'
 import React from 'react'
 import { TouchableRipple } from 'react-native-paper'
+import { Fonts } from '../../utility/CommonFonts'
 
 export default function GButton(props) {
   return (
-    <TouchableRipple onPress={props.press} style={[Button_style.main,props.style]}>
+    <TouchableRipple onPress={props.press} style={[Button_style.main,Fonts.Bold,props.style]}>
       <Text style={Button_style.text}>{props.data}</Text>
     </TouchableRipple>
   )

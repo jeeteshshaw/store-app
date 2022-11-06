@@ -24,31 +24,26 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Login from './Screens/Auth/Login';
-import OTP from './Screens/Auth/OTP';
-import Signup from './Screens/Auth/Signup';
-import RPassword from './Screens/Auth/RPassword';
-import Enter_Email from './Screens/Auth/Email'
-import Home from './Screens/Auth/Home';
+import AuthScreenNavigation from './navigations/AuthNavigations';
+import StackNavigation from './navigations/MainNavigation/StackNavigation';
+import { useSelector } from 'react-redux';
+
+
 const Stack = createNativeStackNavigator();
 
 function App() {
+  // const token = "sadas";
+  const token = useSelector(state=>(state.auth.token));
+  console.log({token});
   return (
     <NavigationContainer>
-      <Stack.Navigator
-      screenOptions={{
-        headerTintColor: 'white',
-        headerStyle: { backgroundColor: 'tomato' },
-        headerShown:false,
-      }}
-      >
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="OTP" component={OTP} />
-        <Stack.Screen name="Signup" component={Signup}/>
-        <Stack.Screen name='Reset' component={RPassword}/>
-        <Stack.Screen name='Enter_Email' component={Enter_Email}/>
-        <Stack.Screen name='Skip' component={Home}/>
-      </Stack.Navigator>
+      {
+        token.length>0?
+        <StackNavigation />
+        :
+        <AuthScreenNavigation />
+        
+      }
     </NavigationContainer>
   );
 }

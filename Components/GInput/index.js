@@ -38,7 +38,7 @@ function GInput(props){
 
 const styles = StyleSheet.create({
     container:{
-        height:40,
+        height:37,
         width:'90%',
         marginLeft:'5%',
         borderRadius:15,

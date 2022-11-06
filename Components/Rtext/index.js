@@ -22,7 +22,7 @@ const Rtext = ({
 
   const cusStyle = {
     fontStyle,
-    color:colors.text,
+    color:"#000",
 
     fontSize:
       normalizeFontSize == 0

@@ -9,6 +9,7 @@ const slice = createSlice({
     },
     reducers:{
         LoginSuccessfully:(state)=>{
+            console.log("LoginSuccessfully");
             state.token = "1234567890"
         },
         LogoutSuccessfully:(state)=>{
