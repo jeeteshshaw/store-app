@@ -1,6 +1,7 @@
 import {View,TextInput, StyleSheet,Image, Touchable } from 'react-native'
 import React, { useState } from 'react'
 import { TouchableRipple } from 'react-native-paper';
+import { normalizeSize } from '../../utility';
 function GInput(props){
     const [text, setText] = useState('');
     if (!props.secureText) {
@@ -38,7 +39,7 @@ function GInput(props){
 
 const styles = StyleSheet.create({
     container:{
-        height:37,
+        height:normalizeSize(40),
         width:'90%',
         marginLeft:'5%',
         borderRadius:15,

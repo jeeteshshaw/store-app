@@ -24,7 +24,7 @@ const ProductListing = () => {
               data={[1,2,3,4,5,6,7,8,9,10]}
               numColumns={3}
               renderItem={({index})=>(
-                <View style={{ backgroundColor: "#fff", borderColor:ThemeDarkGreen,borderWidth:1,elevation: 2, width: ((SCREEN_WIDTH - normalizeSize(75)) / 3) - 8, minHeight: normalizeSize(130), margin:4 }}>
+                <View style={{ backgroundColor: "#fff", borderColor:ThemeDarkGreen,borderWidth:1,elevation: 2, width: ((SCREEN_WIDTH - normalizeSize(75)) / 3) - 10, minHeight: normalizeSize(130), margin:4 }}>
               <Image source={require("../../../assets/images/category1.png")} style={{ height: 80, width: "100%", resizeMode: "stretch", }} />
               <View style={{ borderWidth: 3, borderColor: "#314602", borderTopColor: "#fff", flex:1, paddingHorizontal: 4 }}>
                 <View style={[GS.container]}>
