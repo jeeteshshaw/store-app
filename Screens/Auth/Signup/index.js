@@ -10,8 +10,8 @@ const Signup = (props) => {
     <View style={{flex:1}}>
       <GInput  placeholder={'Name'} keyboardtype={'default'}/>
       <GInput  placeholder={'Email Address'} keyboardtype={'email-address'}/>
-      <GInput  placeholder={'Password'} keyboardtype={'default'} secureText={true} />
-      <GInput  placeholder={'Confirm Password'} secureText={true} keyboardtype={'default'}/>
+      <GInput  placeholder={'Password'} keyboardtype={'default'} secureType={true} />
+      <GInput  placeholder={'Confirm Password'} secureType={true} keyboardtype={'default'}/>
       <GButton data={'Continue'} press={()=>(props.navigation.navigate('OTP',{isSignUp:true}))}/>
     </View>
   )

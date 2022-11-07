@@ -10,7 +10,7 @@ const Login=(props)=>{
     return(
         <View style={{flex:1}} >
             <GInput  placeholder={"Email"}  keyboardtype={'email-address'} />
-            <GInput  placeholder={"Password"} secureText={true} icon={'icon'} keyboardtype={'default'}/>
+            <GInput  placeholder={"Password"} secureType={true} icon={'icon'} keyboardtype={'default'}/>
             <View style={{flexDirection:'row',width:'50%',marginLeft:'10%',marginBottom:10,alignItems:'center'}}>
             <GCheck/>
                 <Text style={[{fontSize:18,color:'white'},Fonts.ExtraBoldItalic]}>

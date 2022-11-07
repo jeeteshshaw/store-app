@@ -3,7 +3,14 @@ import React, { useState } from 'react'
 import { TouchableRipple } from 'react-native-paper';
 function GInput(props){
     const [text, setText] = useState('');
-    if (!props.secureText) {
+    const [SecureText, setSecureText] = useState(props.secureType);
+    const [Icon, setIcon] = useState(false)
+    const OnIconPress=()=>{
+        setIcon(!Icon);
+        setSecureText(!SecureText);
+    }
+
+    if (!props.secureType) {
       return (
                 <View style={[styles.container, props.containerStyle]}>
                 <TextInput
@@ -11,7 +18,7 @@ function GInput(props){
                 placeholder={props.placeholder}
                 keyboardType={props.keyboardtype}
                 onChangeText={text => setText(text)}
-                secureTextEntry={props.secureText}
+                secureTextEntry={SecureText}
                 />
                 </View>
             ) 
@@ -23,10 +30,12 @@ function GInput(props){
                 placeholder={props.placeholder}
                 keyboardType={props.keyboardtype}
                 onChangeText={text => setText(text)}
-                secureTextEntry={props.secureText}
+                secureTextEntry={SecureText}
                 />
-                <TouchableRipple onPress={()=>(console.log('Visible'))} style={{width:'10%',justifyContent:'center'}}>
-                <Image  style={styles.icon} source={require('../../assets/icons/view_open.png')} />
+                <TouchableRipple onPress={OnIconPress} style={{width:'10%',justifyContent:'center'}}>
+                  {
+                    Icon === false ?<Image  style={styles.icon} source={require('../../assets/icons/view_open.png')} />:<Image  style={styles.icon} source={require('../../assets/icons/view_closed.png')} />
+                  }
                 </TouchableRipple>
               </View>
   )

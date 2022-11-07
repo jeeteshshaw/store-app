@@ -18,11 +18,11 @@ const Reset_Password = (props) => {
       <Text style={[style.text,Fonts.Bold]}>
         New Password
       </Text>
-      <GInput  placeholder={'Enter Password'} secureText={true} keyboardtype={'default'}/>
+      <GInput  placeholder={'Enter Password'} secureType={true} keyboardtype={'default'}/>
       <Text style={[style.text,Fonts.Bold]}>
         Confirm Password
       </Text>
-      <GInput  placeholder={'Confirm Password'} secureText={true} keyboardtype={'default'}/>
+      <GInput  placeholder={'Confirm Password'} secureType={true} keyboardtype={'default'}/>
       <GButton style={{marginBottom:4}} data={'Continue'}   press={()=>setModalActivity(!modalactivity)}/>
       <GModal modalVisible={modalactivity} text={"You have successfully changed your password."} modalVisiblity={UpdatingState} />
     </View>
