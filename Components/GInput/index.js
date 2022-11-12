@@ -2,25 +2,32 @@ import {View,TextInput, StyleSheet,Image, Touchable } from 'react-native'
 import React, { useState } from 'react'
 import { TouchableRipple } from 'react-native-paper';
 import { normalizeSize } from '../../utility';
+import Icon from 'react-native-vector-icons/MaterialIcons'
+
 function GInput(props){
     const [text, setText] = useState('');
     const [SecureText, setSecureText] = useState(props.secureType);
-    const [Icon, setIcon] = useState(false)
+    const [Icons, setIcons] = useState(false)
     const OnIconPress=()=>{
-        setIcon(!Icon);
+        setIcons(!Icons);
         setSecureText(!SecureText);
     }
+
 
     if (!props.secureType) {
       return (
                 <View style={[styles.container, props.containerStyle]}>
-                <TextInput
-                style={[styles.inputField,props.style]}
-                placeholder={props.placeholder}
-                keyboardType={props.keyboardtype}
-                onChangeText={text => setText(text)}
-                secureTextEntry={SecureText}
-                />
+                      <TextInput
+                      style={[styles.inputField,props.style]}
+                      placeholder={props.placeholder}
+                      keyboardType={props.keyboardtype}
+                      onChangeText={text => setText(text)}
+                      secureTextEntry={SecureText}
+                      />
+
+                      <TouchableRipple onPress={()=>console.log('pressed')} style={{width:'10%',justifyContent:'center'}}>
+                        {props.SearchType?<Icon  size={40} name="search" color={'#9DE601'}/>:<></>}
+                      </TouchableRipple>
                 </View>
             ) 
   }else{
@@ -35,7 +42,7 @@ function GInput(props){
                 />
                 <TouchableRipple onPress={OnIconPress} style={{width:'10%',justifyContent:'center'}}>
                   {
-                    Icon === false ?<Image  style={styles.icon} source={require('../../assets/icons/view_open.png')} />:<Image  style={styles.icon} source={require('../../assets/icons/view_closed.png')} />
+                    Icons === false ?<Image  style={styles.icon} source={require('../../assets/icons/view_open.png')} />:<Image  style={styles.icon} source={require('../../assets/icons/view_closed.png')} />
                   }
                 </TouchableRipple>
               </View>

@@ -5,7 +5,10 @@ import Signup from '../Screens/Auth/Signup';
 import RPassword from '../Screens/Auth/RPassword';
 import Enter_Email from '../Screens/Auth/Email';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-// import Authless_Home from '../Screens/Authless';
+import SkipLog from '../Screens/Auth/SkipLog';
+import Location from '../Screens/Auth/Location';
+import SetLocation from '../Screens/Auth/SetLocation';
+
 
 // import Login from '../Screens/authScreens/Login';
 // import { createStackNavigator } from '@react-navigation/stack'
@@ -29,17 +32,17 @@ const AuthScreenNavigation = () => {
   return (
            <Stack.Navigator
       screenOptions={{
-        headerTintColor: 'white',
-        headerStyle: { backgroundColor: 'tomato' },
         headerShown:false,
       }}
       >
+        <Stack.Screen name="SkipLog" component={SkipLog} />
+        <Stack.Screen name="Location" component={Location} />
+        <Stack.Screen name="SetLocation" component={SetLocation} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="OTP" component={OTP} />
         <Stack.Screen name="Signup" component={Signup}/>
         <Stack.Screen name='Reset' component={RPassword}/>
         <Stack.Screen name='Enter_Email' component={Enter_Email}/>
-        {/* <Stack.Screen name='Skip' component={Authless_Home}/> */}
       </Stack.Navigator>     
   );
 };
