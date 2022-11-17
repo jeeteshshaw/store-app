@@ -8,6 +8,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SkipLog from '../Screens/Auth/SkipLog';
 import Location from '../Screens/Auth/Location';
 import SetLocation from '../Screens/Auth/SetLocation';
+import Second from '../Screens/Auth/Second';
 
 
 // import Login from '../Screens/authScreens/Login';
@@ -36,6 +37,7 @@ const AuthScreenNavigation = () => {
       }}
       >
         <Stack.Screen name="SkipLog" component={SkipLog} />
+        <Stack.Screen name="Second" component={Second} />
         <Stack.Screen name="Location" component={Location} />
         <Stack.Screen name="SetLocation" component={SetLocation} />
         <Stack.Screen name="Login" component={Login} />

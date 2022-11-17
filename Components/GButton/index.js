@@ -6,7 +6,7 @@ import { Fonts } from '../../utility/CommonFonts'
 export default function GButton(props) {
   return (
     <TouchableRipple onPress={props.press} style={[Button_style.main,Fonts.Bold,props.style]}>
-      <Text style={Button_style.text}>{props.data}</Text>
+      <Text style={[Button_style.text,props.textStyle]}>{props.data}</Text>
     </TouchableRipple>
   )
 }
