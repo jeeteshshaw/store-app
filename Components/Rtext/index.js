@@ -15,7 +15,7 @@ const Rtext = ({
   children = '',
   checkbox = false,
   color = '#353535',
-  fontWeight = 'normal',
+  fontWeight = '400',
   numberOfLines = 0,
 }) => {
   const { colors } = useTheme();
@@ -29,7 +29,7 @@ const Rtext = ({
         ? normalizeSize(fontSize, lgFontSize, smFontSize)
         : normalizeFontSize,
     fontWeight,
-    fontFamily: 'NoirPro-Regular'
+    fontFamily: "K2D-"+ fontWeight
   };
   return (
     <View>

@@ -32,10 +32,11 @@ const HomeHeader = () => {
             <View style={[GS.row_Between, { borderRadius: 20, borderWidth: 2, borderColor: "#000", backgroundColor: "#fff", height: normalizeSize(30), marginHorizontal: 16 }]}>
 
                 <TextInput
-                    style={{ fontSize: normalizeSize(12), paddingHorizontal: 16, marginVertical: 0, paddingVertical: 0 }}
+                    style={{ fontSize: normalizeSize(12), paddingHorizontal: 16, marginVertical: 0, paddingVertical: 0, color:"#000" }}
                     placeholder="Search"
                     selectionColor={"black"}
                     cursorColor="black"
+                    placeholderTextColor={"#A7A7A7"}
                 />
                 <View style={{ paddingHorizontal: 16 }}>
                     <MCI name="magnify" size={24} />

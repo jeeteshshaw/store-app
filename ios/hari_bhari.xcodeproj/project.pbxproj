@@ -14,6 +14,23 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-hari_bhari-hari_bhariTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-hari_bhari-hari_bhariTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		BBD68F6BD5D54E2797107B72 /* K2D-400-italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 402715909A704118961999A8 /* K2D-400-italic.ttf */; };
+		6EBF4475D7054338A1AD9FE4 /* K2D-400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5790099D6C074ABA8798A1AE /* K2D-400.ttf */; };
+		167A9CF7DA654222B1DD7A69 /* K2D-700.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4495EBF84ED47D0AC6EC1B3 /* K2D-700.ttf */; };
+		C6B687B94167431D9151B2EF /* K2D-700italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1579B00BC0F04AA794D1B306 /* K2D-700italic.ttf */; };
+		57D7DFC3D0664D8EB778F545 /* K2D-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D2E570AE39C48619D89829C /* K2D-ExtraBold.ttf */; };
+		C0DE784B21C041CB82CD94EA /* K2D-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAE0CD9F58DC410195A838CE /* K2D-ExtraBoldItalic.ttf */; };
+		F0C08AEC6E234FEFBA404DD9 /* K2D-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7D142936C04460384DD3F8A /* K2D-ExtraLight.ttf */; };
+		F68DF4A071E743E091EFD6A7 /* K2D-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5335DBCF16014773AA7B6015 /* K2D-ExtraLightItalic.ttf */; };
+		F6C211E05D4E4DEFAC557C3B /* K2D-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 357A7D0A629248838999D880 /* K2D-Light.ttf */; };
+		33EC9573FF9D4746A527E320 /* K2D-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7457EBD1677B4A069F7ED3E0 /* K2D-LightItalic.ttf */; };
+		E646340F91734F48A7590278 /* K2D-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A545D008376141698E5506AD /* K2D-Medium.ttf */; };
+		055726B1521341C2B4BC9010 /* K2D-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A177380411E54CF4B28D09C0 /* K2D-MediumItalic.ttf */; };
+		33C8132EE0334F598661A404 /* K2D-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D55FD2DE47240ED96BF0DCD /* K2D-SemiBold.ttf */; };
+		0083C87CEDE94F7E98BEC1D9 /* K2D-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F091C6C90FC451C91DA8419 /* K2D-SemiBoldItalic.ttf */; };
+		C4A829EEE8F5441584B55541 /* K2D-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B73D3B4A30B5411B98DAA42B /* K2D-Thin.ttf */; };
+		B3F10AFEF0744F2AA6F28BAD /* K2D-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A06C33A8B1545958BB99F98 /* K2D-ThinItalic.ttf */; };
+		F7416FA7F41A47F5898C2A1A /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = F112222A010B4620B38EDA0C /* OFL.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +61,23 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = hari_bhari/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-hari_bhari-hari_bhariTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hari_bhari-hari_bhariTests.release.xcconfig"; path = "Target Support Files/Pods-hari_bhari-hari_bhariTests/Pods-hari_bhari-hari_bhariTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		402715909A704118961999A8 /* K2D-400-italic.ttf */ = {isa = PBXFileReference; name = "K2D-400-italic.ttf"; path = "../assets/fonts/K2D-400-italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5790099D6C074ABA8798A1AE /* K2D-400.ttf */ = {isa = PBXFileReference; name = "K2D-400.ttf"; path = "../assets/fonts/K2D-400.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F4495EBF84ED47D0AC6EC1B3 /* K2D-700.ttf */ = {isa = PBXFileReference; name = "K2D-700.ttf"; path = "../assets/fonts/K2D-700.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1579B00BC0F04AA794D1B306 /* K2D-700italic.ttf */ = {isa = PBXFileReference; name = "K2D-700italic.ttf"; path = "../assets/fonts/K2D-700italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3D2E570AE39C48619D89829C /* K2D-ExtraBold.ttf */ = {isa = PBXFileReference; name = "K2D-ExtraBold.ttf"; path = "../assets/fonts/K2D-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FAE0CD9F58DC410195A838CE /* K2D-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; name = "K2D-ExtraBoldItalic.ttf"; path = "../assets/fonts/K2D-ExtraBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E7D142936C04460384DD3F8A /* K2D-ExtraLight.ttf */ = {isa = PBXFileReference; name = "K2D-ExtraLight.ttf"; path = "../assets/fonts/K2D-ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5335DBCF16014773AA7B6015 /* K2D-ExtraLightItalic.ttf */ = {isa = PBXFileReference; name = "K2D-ExtraLightItalic.ttf"; path = "../assets/fonts/K2D-ExtraLightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		357A7D0A629248838999D880 /* K2D-Light.ttf */ = {isa = PBXFileReference; name = "K2D-Light.ttf"; path = "../assets/fonts/K2D-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7457EBD1677B4A069F7ED3E0 /* K2D-LightItalic.ttf */ = {isa = PBXFileReference; name = "K2D-LightItalic.ttf"; path = "../assets/fonts/K2D-LightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A545D008376141698E5506AD /* K2D-Medium.ttf */ = {isa = PBXFileReference; name = "K2D-Medium.ttf"; path = "../assets/fonts/K2D-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A177380411E54CF4B28D09C0 /* K2D-MediumItalic.ttf */ = {isa = PBXFileReference; name = "K2D-MediumItalic.ttf"; path = "../assets/fonts/K2D-MediumItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2D55FD2DE47240ED96BF0DCD /* K2D-SemiBold.ttf */ = {isa = PBXFileReference; name = "K2D-SemiBold.ttf"; path = "../assets/fonts/K2D-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4F091C6C90FC451C91DA8419 /* K2D-SemiBoldItalic.ttf */ = {isa = PBXFileReference; name = "K2D-SemiBoldItalic.ttf"; path = "../assets/fonts/K2D-SemiBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B73D3B4A30B5411B98DAA42B /* K2D-Thin.ttf */ = {isa = PBXFileReference; name = "K2D-Thin.ttf"; path = "../assets/fonts/K2D-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5A06C33A8B1545958BB99F98 /* K2D-ThinItalic.ttf */ = {isa = PBXFileReference; name = "K2D-ThinItalic.ttf"; path = "../assets/fonts/K2D-ThinItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F112222A010B4620B38EDA0C /* OFL.txt */ = {isa = PBXFileReference; name = "OFL.txt"; path = "../assets/fonts/OFL.txt"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +156,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				1952A49BA3D04D3E9659774F /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +182,31 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		1952A49BA3D04D3E9659774F /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				402715909A704118961999A8 /* K2D-400-italic.ttf */,
+				5790099D6C074ABA8798A1AE /* K2D-400.ttf */,
+				F4495EBF84ED47D0AC6EC1B3 /* K2D-700.ttf */,
+				1579B00BC0F04AA794D1B306 /* K2D-700italic.ttf */,
+				3D2E570AE39C48619D89829C /* K2D-ExtraBold.ttf */,
+				FAE0CD9F58DC410195A838CE /* K2D-ExtraBoldItalic.ttf */,
+				E7D142936C04460384DD3F8A /* K2D-ExtraLight.ttf */,
+				5335DBCF16014773AA7B6015 /* K2D-ExtraLightItalic.ttf */,
+				357A7D0A629248838999D880 /* K2D-Light.ttf */,
+				7457EBD1677B4A069F7ED3E0 /* K2D-LightItalic.ttf */,
+				A545D008376141698E5506AD /* K2D-Medium.ttf */,
+				A177380411E54CF4B28D09C0 /* K2D-MediumItalic.ttf */,
+				2D55FD2DE47240ED96BF0DCD /* K2D-SemiBold.ttf */,
+				4F091C6C90FC451C91DA8419 /* K2D-SemiBoldItalic.ttf */,
+				B73D3B4A30B5411B98DAA42B /* K2D-Thin.ttf */,
+				5A06C33A8B1545958BB99F98 /* K2D-ThinItalic.ttf */,
+				F112222A010B4620B38EDA0C /* OFL.txt */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -244,6 +304,23 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				BBD68F6BD5D54E2797107B72 /* K2D-400-italic.ttf in Resources */,
+				6EBF4475D7054338A1AD9FE4 /* K2D-400.ttf in Resources */,
+				167A9CF7DA654222B1DD7A69 /* K2D-700.ttf in Resources */,
+				C6B687B94167431D9151B2EF /* K2D-700italic.ttf in Resources */,
+				57D7DFC3D0664D8EB778F545 /* K2D-ExtraBold.ttf in Resources */,
+				C0DE784B21C041CB82CD94EA /* K2D-ExtraBoldItalic.ttf in Resources */,
+				F0C08AEC6E234FEFBA404DD9 /* K2D-ExtraLight.ttf in Resources */,
+				F68DF4A071E743E091EFD6A7 /* K2D-ExtraLightItalic.ttf in Resources */,
+				F6C211E05D4E4DEFAC557C3B /* K2D-Light.ttf in Resources */,
+				33EC9573FF9D4746A527E320 /* K2D-LightItalic.ttf in Resources */,
+				E646340F91734F48A7590278 /* K2D-Medium.ttf in Resources */,
+				055726B1521341C2B4BC9010 /* K2D-MediumItalic.ttf in Resources */,
+				33C8132EE0334F598661A404 /* K2D-SemiBold.ttf in Resources */,
+				0083C87CEDE94F7E98BEC1D9 /* K2D-SemiBoldItalic.ttf in Resources */,
+				C4A829EEE8F5441584B55541 /* K2D-Thin.ttf in Resources */,
+				B3F10AFEF0744F2AA6F28BAD /* K2D-ThinItalic.ttf in Resources */,
+				F7416FA7F41A47F5898C2A1A /* OFL.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

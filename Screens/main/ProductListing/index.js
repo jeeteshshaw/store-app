@@ -7,6 +7,7 @@ import { Rtext } from '../../../Components/Rtext'
 import { CategoryList } from '../../../store/static'
 import LeftCatrgoryList from './LeftCatrgoryList'
 import { ThemeDarkGreen } from '../../../config/Colors'
+import AddToCart from '../../Popups/AddToCart'
 
 const rightHalf = SCREEN_WIDTH - normalizeSize(100)
 
@@ -46,6 +47,7 @@ const ProductListing = () => {
           </View>
         </View>
       </View>
+      <AddToCart />
     </View>
   )
 }

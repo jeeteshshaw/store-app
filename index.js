@@ -31,7 +31,7 @@ const Main = () => {
   // };
   return (
     <Provider store={store}>
-      <PaperProvider theme={colorScheme==="dark" ? PaperDarkTheme : PaperDefaultTheme}>
+      <PaperProvider>
         <App />
       </PaperProvider>
 
