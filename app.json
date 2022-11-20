@@ -7,9 +7,9 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "image": "./assets/splash1.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#9FCC3A"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -18,13 +18,15 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+        "backgroundColor": "#9FCC3A"
+      },
+      "package": "com.alibhiyasoftwares.haribhari"
+
     },
     "web": {
       "favicon": "./assets/favicon.png"
