@@ -23,7 +23,7 @@ const Home = () => {
 
             <ImageBackground style={{ width: SCREEN_WIDTH }} source={require("../../../assets/images/home_carousel_bg.png")} resizeMode="cover">
                 
-                <View style={[{ backgroundColor: "rgba(0,0,0,0.75)", width: SCREEN_WIDTH, padding: 8, paddingVertical: 16 }]}>
+                <View style={[styles.carouselContainer]}>
                     <View>
                         <CarouselDisplay />
 
@@ -42,4 +42,11 @@ const Home = () => {
 
 export default Home
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    carouselContainer:{
+        backgroundColor: "rgba(0,0,0,0.75)", 
+        width: SCREEN_WIDTH, 
+        padding: 8, 
+        paddingVertical: 16 
+    }
+})

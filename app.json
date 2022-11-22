@@ -18,7 +18,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": false
+      "supportsTablet": false,
+      "bundleIdentifier": "com.alibhiyasoftwares.haribhari"
     },
     "android": {
       "adaptiveIcon": {
@@ -26,10 +27,14 @@
         "backgroundColor": "#9FCC3A"
       },
       "package": "com.alibhiyasoftwares.haribhari"
-
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "6bb2fd48-2a5b-4277-9a4f-8233a255bc7d"
+      }
     }
   }
 }

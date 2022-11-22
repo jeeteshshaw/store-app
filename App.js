@@ -1,5 +1,5 @@
-import { StatusBar, } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// import { StatusBar, } from 'expo-status-bar';
+import { StyleSheet, Text, View,StatusBar } from 'react-native';
 import { Provider, useSelector } from 'react-redux';
 import store from './store';
 import {
@@ -25,9 +25,13 @@ export default function App() {
   }, [])
   
   return (
-    <Provider store={store}>
-      <NavigatorHandler />
-    </Provider>
+    <>
+       <StatusBar hidden={false} style="light" />
+        <Provider store={store}>
+          <NavigatorHandler />
+        </Provider>
+
+    </>
     
   );
 }
@@ -45,7 +49,6 @@ const NavigatorHandler = ()=>{
         <AuthScreenNavigation />
         
       }
-      <StatusBar  />
 
     </NavigationContainer>
 

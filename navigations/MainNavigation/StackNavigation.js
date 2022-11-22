@@ -23,6 +23,7 @@ import MCI from 'react-native-vector-icons/MaterialCommunityIcons';
 import Home from '../../Screens/main/Home';
 import HomeHeader from '../../Components/HomeHeader';
 import ProductListing from '../../Screens/main/ProductListing';
+import ProductDetails from '../../Screens/main/ProductDetails';
 const Stack = createNativeStackNavigator()
 
 const StackNavigation = () => {
@@ -39,6 +40,15 @@ const StackNavigation = () => {
         options={{
           header: () => <HomeHeader />
 
+        }}
+      />
+      <Stack.Screen
+        name="ProductDetails"
+        component={ProductDetails}
+
+        options={{
+          // header: () => <HomeHeader />
+          headerShown:false
         }}
       />
       <Stack.Screen
