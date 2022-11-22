@@ -12,8 +12,8 @@ import GCheck from '../../../Components/GCheck';
 const Login=(props)=>{
     return(
         <View style={{flex:1}}>
-                <GInput containerStyle={{height:'23%'}} placeholder={"Email"}  keyboardtype={'email-address'} />
-                <GInput containerStyle={{height:'23%'}} placeholder={"Password"} secureText={true} icon={'icon'} keyboardtype={'default'}/>
+                <GInput  placeholder={"Email"}  keyboardtype={'email-address'} />
+                <GInput  placeholder={"Password"} secureType={true} icon={'icon'} keyboardtype={'default'}/>
                 <View style={{flexDirection:'row',width:'40%',marginLeft:'10%',marginBottom:'2%',alignItems:'center'}}>
                 <GCheck
                 />
@@ -22,7 +22,7 @@ const Login=(props)=>{
                     </Text>    
                 </View>
                 <View>
-                    <GButton data={"Continue"}  press={()=>(props.navigation.navigate('Skip'))}/>
+                    <GButton data={"Continue"}  press={()=>(console.log("Continue Pressed"))}/>
                     <Text onPress={()=>(props.navigation.navigate('Enter_Email'))} style={Login_style.foreget_text}>
                         Forget Password
                     </Text>

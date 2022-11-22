@@ -5,6 +5,9 @@ import Signup from '../Screens/Auth/Signup';
 import RPassword from '../Screens/Auth/RPassword';
 import Enter_Email from '../Screens/Auth/Email';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import SetLocation from '../Screens/Auth/SetLocation';
+import Location from '../Screens/Auth/Location';
+import SkipLog from '../Screens/Auth/SkipLog';
 // import Authless_Home from '../Screens/Authless';
 
 // import Login from '../Screens/authScreens/Login';
@@ -34,6 +37,9 @@ const AuthScreenNavigation = () => {
         headerShown:false,
       }}
       >
+        <Stack.Screen name="SkipLog" component={SkipLog} />
+        <Stack.Screen name="Location" component={Location} />
+        <Stack.Screen name="SetLocation" component={SetLocation} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="OTP" component={OTP} />
         <Stack.Screen name="Signup" component={Signup}/>

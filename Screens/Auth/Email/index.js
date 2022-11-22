@@ -14,7 +14,7 @@ const Enter_Email = (props) => {
       placeholder={'Enter Email'}
       keyboardtype={'email-address'}
       />
-      <GButton style={{ height:'25%'}} data={'Continue'} press={()=>(props.navigation.navigate('OTP'))}/>
+      <GButton  data={'Continue'} press={()=>(props.navigation.navigate('OTP'))}/>
     </View>
   )
 }

@@ -13,12 +13,12 @@ const Reset_Password = (props) => {
       <Text style={style.text}>
         New Password
       </Text>
-      <GInput  placeholder={'Enter Password'} secureText={true} keyboardtype={'default'}/>
+      <GInput  placeholder={'Enter Password'} secureType={true} keyboardtype={'default'}/>
       <Text style={style.text}>
         Confirm Password
       </Text>
-      <GInput  placeholder={'Confirn Password'} secureText={true} keyboardtype={'default'}/>
-      <GButton style={{ height:'25%',marginTop:22}} data={'Continue'}  press={()=>(props.navigation.navigate('Skip'))}/>
+      <GInput  placeholder={'Confirm Password'} secureType={true} keyboardtype={'default'}/>
+      <GButton style={{marginTop:22}} data={'Continue'}  press={()=>(console.log("Continue Pressed from Reset Password"))}/>
     </View>
   )
 }
