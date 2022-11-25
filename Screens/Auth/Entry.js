@@ -1,17 +1,15 @@
-import {View, ImageBackground, Text,StyleSheet,ScrollView,KeyboardAvoidingView } from 'react-native';
+import {View, ImageBackground, Text,StyleSheet,ScrollView,KeyboardAvoidingView,SafeAreaView } from 'react-native';
 import { TouchableRipple } from 'react-native-paper';
 import { useDispatch } from 'react-redux';
 import { LoginSuccessfully } from '../../store/auth';
 import { SCREEN_HEIGHT } from '../../utility';
 
 function Entry(Component){
-
-    
-
     return (props)=>{
         const dispatch = useDispatch();
     
     return (
+        <SafeAreaView style={{flex:1}}>
         <View style={Entry_style.container}>
             <ScrollView style={{minHeight:SCREEN_HEIGHT,backgroundColor:'#9FCC3A'}}>
             <View style={[Entry_style.semi_container,{backgroundColor:'#A7A7A7'}]}>
@@ -59,13 +57,15 @@ function Entry(Component){
             </KeyboardAvoidingView>
         </ScrollView>
     </View>
+    </SafeAreaView>
     )}
 }
 export default Entry;
 
 const Entry_style = StyleSheet.create({
     container:{
-        flex:1
+        flex:1,
+        paddingTop:27
     },
     semi_container:{
     height:SCREEN_HEIGHT*0.45

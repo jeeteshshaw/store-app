@@ -7,20 +7,17 @@ import Entry from '../Entry';
 
     function OTP(props) {
         return(
-            <View style={{flex:1}}>
             <View style={{flex:1, justifyContent:'center',alignItems:'center'}} >
                     <Text style={OTP_Style.text_style}>
                       ENTER  OTP
                     </Text>
-                    <GInput containerStyle={{height:'30%'}} placeholder={"OTP"} keyboardtype={'numeric'}/>
-            </View>
-            <GButton style={{height:'25%'}} data={"Continue"} press={()=>(props.navigation.navigate('Reset'))}/>
+                    <GInput  placeholder={"OTP"} keyboardtype={'numeric'}/>
+            <GButton  data={"Continue"} press={()=>(props.navigation.navigate('Reset'))}/>
         </View>
         )
     }
 
     export default Entry(OTP);
-    // export default Entry(Enter_OTP)
 
 
     const OTP_Style = StyleSheet.create({
