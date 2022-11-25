@@ -25,7 +25,7 @@ function GInput(props){
                       secureTextEntry={SecureText}
                       />
 
-                      <TouchableRipple onPress={()=>console.log('pressed')} style={{width:'10%',justifyContent:'center'}}>
+                      <TouchableRipple onPress={()=> props.OnIconPress() || console.log('pressed')} style={{width:'10%',justifyContent:'center'}}>
                         {props.SearchType?<Icon  size={40} name="search" color={'#9DE601'}/>:<></>}
                       </TouchableRipple>
                 </View>

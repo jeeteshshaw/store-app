@@ -1,6 +1,8 @@
 import { View, Text, Image } from 'react-native'
 import React from 'react'
 import GButton from '../../../Components/GButton'
+import { normalizeSize, SCREEN_WIDTH } from '../../../utility'
+import { Rtext } from '../../../Components/Rtext'
 
 const Location = (props) => {
 
@@ -16,9 +18,9 @@ const Location = (props) => {
         <Image source={require('../../../assets/icons/Why-no-location-found.png')}  style={{height:'100%', width:'100%'}}/>
       </View>
       <View style={{height:'40%', width:'100%'}}>
-        <Text style={{fontSize:25, color:'black', textAlign:'center', marginVertical:20}}>Not available</Text>
-        <Text style={{fontSize:18,width:'90%',marginHorizontal:40, color:'black'}}>Sorry, Hari Bhari is not available at your current location yet. We will be there soon hang on tight.</Text>
-        <GButton style={{ height:50, width:300, marginVertical:50}} textStyle={{paddingTop:5,justifyContent:'center'}} press={ButtonFunction} data={'Set location manually'}/>
+        <Rtext style={{color:'black', textAlign:'center', marginVertical:20}} fontWeight={"700"} fontSize={24}>Not available</Rtext>
+        <Rtext style={{ paddingHorizontal:10, color:'black', width:"100%"}} fontSize={16}>Sorry, Hari Bhari is not available at your current location yet. We will be there soon hang on tight.</Rtext>
+        <GButton style={{ height:50, width:"85%", marginVertical:50}} textStyle={{justifyContent:'center', fontFamily:"K2D-700", fontSize:normalizeSize(18)}} press={ButtonFunction} data={'Set location manually'}/>
       </View>
     </View>
   )
