@@ -1,20 +1,45 @@
 import { View, Text,StyleSheet } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import GButton from '../../../Components/GButton';
 import GInput from '../../../Components/GInput';
 import Entry from '../Entry';
+import { Fonts } from '../../../utility/CommonFonts';
+import GModal from '../../../Components/GModal';
 
 
     function OTP(props) {
-        return(
-            <View style={{flex:1, justifyContent:'center',alignItems:'center'}} >
-                    <Text style={OTP_Style.text_style}>
-                      ENTER  OTP
-                    </Text>
-                    <GInput  placeholder={"OTP"} keyboardtype={'numeric'}/>
-            <GButton  data={"Continue"} press={()=>(props.navigation.navigate('Reset'))}/>
-        </View>
-        )
+        const [modalactivity, setModalActivity] = useState(false)
+        const UpdatingState=()=>{
+        setModalActivity(false);
+        props.navigation.navigate('Login');
+    }
+        if (props.route.params.isSignUp) {
+            return(
+                <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
+                    <Text style={[OTP_Style.text_style,Fonts.Bold]}> Enter OTP </Text>
+                    <GInput
+                    placeholder={'OTP'}
+                    keyboardtype={'numeric'}
+                    />
+                    <GButton style={{marginTop:20}} data={'Continue'} press={()=>(setModalActivity(true))}/>
+                    <GModal modalVisible={modalactivity} text={"You have successfully Signed Up."} modalVisiblity={UpdatingState} />
+                </View>
+                )    
+        } else {
+            
+            return(
+                <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
+                    <Text style={[OTP_Style.text_style,Fonts.Bold]}> Enter OTP </Text>
+                    <GInput
+                    placeholder={'OTP'}
+                    keyboardtype={'numeric'}
+                    />
+                    <GButton style={{marginTop:20}} data={'Continue'} press={()=>(props.navigation.navigate('Reset'))}/>
+                </View>
+                )
+
+        }
+
     }
 
     export default Entry(OTP);
@@ -24,8 +49,8 @@ import Entry from '../Entry';
         text_style:{
           textAlign:'center',
           color:'white', 
-          fontSize:20,
+          fontSize:23,
           width:'37%',
-          paddingBottom:'4%'
+          paddingBottom:10,
         },
         })

@@ -7,11 +7,11 @@ import GButton from '../../../Components/GButton';
 const Signup = (props) => {
   return (
     <View style={{flex:1}}>
-      <GInput  placeholder={'Name'} keyboardtype={'default'}/>
-      <GInput  placeholder={'Email Address'} keyboardtype={'email-address'}/>
-      <GInput  placeholder={'Password'} keyboardtype={'default'} secureText={true} />
-      <GInput  placeholder={'Confirm Password'} secureText={true} keyboardtype={'default'}/>
-      <GButton data={'Continue'} press={()=>(props.navigation.navigate('OTP'))}/>
+      <GInput containerStyle={{height:37}}  placeholder={'Name'} keyboardtype={'default'}/>
+      <GInput containerStyle={{height:37}}  placeholder={'Email Address'} keyboardtype={'email-address'}/>
+      <GInput containerStyle={{height:37}}  placeholder={'Password'} keyboardtype={'default'} secureType={true} />
+      <GInput containerStyle={{height:37}}  placeholder={'Confirm Password'} secureType={true} keyboardtype={'default'}/>
+      <GButton style={{height:37}} data={'Continue'} press={()=>(props.navigation.navigate('OTP',{isSignUp:true}))}/>
     </View>
   )
 }

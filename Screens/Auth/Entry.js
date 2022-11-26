@@ -3,6 +3,7 @@ import { TouchableRipple } from 'react-native-paper';
 import { useDispatch } from 'react-redux';
 import { LoginSuccessfully } from '../../store/auth';
 import { SCREEN_HEIGHT } from '../../utility';
+import { Fonts } from '../../utility/CommonFonts';
 
 function Entry(Component){
     return (props)=>{
@@ -25,8 +26,8 @@ function Entry(Component){
             <KeyboardAvoidingView style={{backgroundColor:'#9FCC3A', height:SCREEN_HEIGHT*0.55}}>
                 <View style={{flex:1}} >
                     <View>
-                        <View style={{paddingTop:22}}>
-                            <Text style={{textAlign:'center',fontSize:20,color:'black'}}>
+                        <View style={{paddingTop:13}}>
+                            <Text style={[{textAlign:'center',fontSize:20,color:'black'},Fonts.Bold]}>
                                 Grocery delivery in minutes
                             </Text>
                         </View>
@@ -45,7 +46,7 @@ function Entry(Component){
                     <View style={{flex:1}}>
                     <Component {...props}/>    
                     </View>
-                    <View style={{marginTop: 16}}>
+                    <View style={{marginTop: 16,bottom:5}}>
                         <Text style={Entry_style.agree_text}>
                             By continuing, you agree to our Terms of 
                         </Text>
@@ -65,7 +66,6 @@ export default Entry;
 const Entry_style = StyleSheet.create({
     container:{
         flex:1,
-        paddingTop:27
     },
     semi_container:{
     height:SCREEN_HEIGHT*0.45
