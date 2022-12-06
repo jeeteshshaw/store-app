@@ -11,32 +11,36 @@ import HeaderBanner from './HeaderBanner'
 import OffersBanner from './OffersBanner'
 import CategoryListing from './CategoryListing'
 import CarouselDisplay from './CarouselDisplay'
+import HomeHeader from '../../../Components/HomeHeader'
 
 const Home = () => {
     // console.log(SCREEN_WIDTH);
     return (
-        <ScrollView>
-            <HeaderBanner />
-            <OffersBanner />
+        <View style={GS.container}>
+            <HomeHeader />
+            <ScrollView>
+                <HeaderBanner />
+                <OffersBanner />
 
-            <CategoryListing />
+                <CategoryListing />
 
-            <ImageBackground style={{ width: SCREEN_WIDTH }} source={require("../../../assets/images/home_carousel_bg.png")} resizeMode="cover">
-                
-                <View style={[styles.carouselContainer]}>
-                    <View>
-                        <CarouselDisplay />
+                <ImageBackground style={{ width: SCREEN_WIDTH }} source={require("../../../assets/images/home_carousel_bg.png")} resizeMode="cover">
+                    
+                    <View style={[styles.carouselContainer]}>
+                        <View>
+                            <CarouselDisplay />
+
+                        </View>
+                        <View style={{marginTop:16}}>
+                            <CarouselDisplay />
+
+                        </View>
+
 
                     </View>
-                    <View style={{marginTop:16}}>
-                        <CarouselDisplay />
-
-                    </View>
-
-
-                </View>
-            </ImageBackground >
-        </ScrollView>
+                </ImageBackground >
+            </ScrollView>
+        </View>
     )
 }
 

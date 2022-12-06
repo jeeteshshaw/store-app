@@ -13,6 +13,7 @@ import StackNavigation from './navigations/MainNavigation/StackNavigation';
 import AuthScreenNavigation from './navigations/AuthNavigations';
 import { useLayoutEffect } from 'react';
 import useFonts from './utility/FontLoad/index'
+import { MenuProvider } from 'react-native-popup-menu';
 export default function App() {
   const fontLoad = async()=>{
     await useFonts();
@@ -28,7 +29,13 @@ export default function App() {
     <>
        <StatusBar hidden={false} style="light" />
         <Provider store={store}>
-          <NavigatorHandler />
+          <PaperProvider>
+            <MenuProvider>
+              <NavigatorHandler />
+              
+            </MenuProvider>
+
+          </PaperProvider>
         </Provider>
 
     </>

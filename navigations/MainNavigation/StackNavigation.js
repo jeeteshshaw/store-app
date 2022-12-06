@@ -24,6 +24,7 @@ import Home from '../../Screens/main/Home';
 import HomeHeader from '../../Components/HomeHeader';
 import ProductListing from '../../Screens/main/ProductListing';
 import ProductDetails from '../../Screens/main/ProductDetails';
+import Search from '../../Screens/main/Search';
 const Stack = createNativeStackNavigator()
 
 const StackNavigation = () => {
@@ -32,14 +33,24 @@ const StackNavigation = () => {
 
   return (
 
-    <Stack.Navigator initialRouteName="Welcome">
+    <Stack.Navigator initialRouteName="Home">
+      
       <Stack.Screen
         name="Home"
         component={Home}
 
         options={{
-          header: () => <HomeHeader />
+          headerShown:false
 
+        }}
+      />
+      <Stack.Screen
+        name="SearchProduct"
+        component={Search}
+
+        options={{
+          // header: () => <HomeHeader />
+          headerShown:false
         }}
       />
       <Stack.Screen
@@ -50,7 +61,7 @@ const StackNavigation = () => {
           // header: () => <HomeHeader />
           headerShown:false
         }}
-      />
+      /> 
       <Stack.Screen
         name="ProductListing"
         component={ProductListing}
