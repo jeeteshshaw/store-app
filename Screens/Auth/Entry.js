@@ -1,4 +1,4 @@
-import {View, ImageBackground, Text,StyleSheet,ScrollView,KeyboardAvoidingView,SafeAreaView } from 'react-native';
+import {View, ImageBackground, Text,StyleSheet,ScrollView,KeyboardAvoidingView,SafeAreaView, StatusBar } from 'react-native';
 import { TouchableRipple } from 'react-native-paper';
 import { useDispatch } from 'react-redux';
 import { LoginSuccessfully } from '../../store/auth';
@@ -10,9 +10,9 @@ function Entry(Component){
         const dispatch = useDispatch();
     
     return (
-        <SafeAreaView style={{flex:1}}>
+        // <SafeAreaView style={{flex:1}}>
         <View style={Entry_style.container}>
-            <ScrollView style={{minHeight:SCREEN_HEIGHT,backgroundColor:'#9FCC3A'}}>
+            <ScrollView style={{minHeight:SCREEN_HEIGHT-StatusBar.currentHeight,backgroundColor:'#9FCC3A'}}>
             <View style={[Entry_style.semi_container,{backgroundColor:'#A7A7A7'}]}>
                 <ImageBackground source={require('../../assets/images/mp_1.png')} resizeMode="cover" style={{flex:1,width:'100%',height:'100%'}}>
                     <TouchableRipple onPress={()=>{
@@ -23,7 +23,7 @@ function Entry(Component){
                     </TouchableRipple>
                 </ImageBackground>
             </View>
-            <KeyboardAvoidingView style={{backgroundColor:'#9FCC3A', height:SCREEN_HEIGHT*0.55}}>
+            <View style={{backgroundColor:'#9FCC3A', flex:1}}>
                 <View style={{flex:1}} >
                     <View>
                         <View style={{paddingTop:13}}>
@@ -46,7 +46,7 @@ function Entry(Component){
                     <View style={{flex:1}}>
                     <Component {...props}/>    
                     </View>
-                    <View style={{marginTop: 16,bottom:5}}>
+                    <View style={{paddingVertical: 16}}>
                         <Text style={Entry_style.agree_text}>
                             By continuing, you agree to our Terms of 
                         </Text>
@@ -55,10 +55,10 @@ function Entry(Component){
                         </Text>
                     </View>
                 </View>
-            </KeyboardAvoidingView>
+            </View>
         </ScrollView>
     </View>
-    </SafeAreaView>
+    // </SafeAreaView>
     )}
 }
 export default Entry;

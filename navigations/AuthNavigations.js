@@ -36,6 +36,7 @@ const AuthScreenNavigation = () => {
         headerStyle: { backgroundColor: 'tomato' },
         headerShown:false,
       }}
+      initialRouteName={"Login"}
       >
         <Stack.Screen name="SkipLog" component={SkipLog} />
         <Stack.Screen name="Location" component={Location} />
