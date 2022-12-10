@@ -43,10 +43,10 @@ function Entry(Component){
                                 </Text>
                             </View>
                     </View>
-                    <View style={{flex:1}}>
+                    <View style={{flex:1, minHeight:SCREEN_HEIGHT*0.35}}>
                     <Component {...props}/>    
                     </View>
-                    <View style={{paddingVertical: 16}}>
+                    <View style={{paddingVertical:16}}>
                         <Text style={Entry_style.agree_text}>
                             By continuing, you agree to our Terms of 
                         </Text>

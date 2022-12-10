@@ -87,282 +87,36 @@ export const CategoryList = [
         text:"Track the journey of your package, from pick up through to delivery."
     },
 ];
+export const ProfileOptionList = [
+    {
+        name:"Profile",
+        icon: require("../../assets/icons/user1.png")
 
-// export const SocialLoginList = [
-//     {
-//         Icon:(style={})=><Image source={require("../../assets/icons/googleIcon.png")}  style={[GS.icon, style]} />,
-//         text:"Google"
-//     },
-//     {
-//         Icon:(style={})=><Image source={require("../../assets/icons/fb.png")}  style={[GS.icon, style]} />,
-//         text:"Facebook"
-//     },
-// ]
+    },
+    {
+        name:"Save Address",
+        icon: require("../../assets/icons/white_pin1.png")
 
-// export const LoginFormList = [
-//     {
-//         placeholder:"Email Address",
-//         secureTextEntry:false,
-//         name:"email"
+    },
+    {
+        name:"My Order",
+        icon: require("../../assets/icons/order1.png")
 
-//     },
-//     {
-//         placeholder:"Password",
-//         secureTextEntry:true,
-//         name:"password"
-//     },
-    
-// ]
+    },
+    {
+        name:"Cart",
+        icon: require("../../assets/icons/cart1.png")
 
+    },
+    {
+        name:"FAQ's",
+        icon: require("../../assets/icons/wpf_faq.png")
 
-// export const SignupTopFormList = [
-//     {
-//        split:[
-//            {
-//             placeholder:"First Name",
-//             secureTextEntry:false,
-//             name:"firstname",
-//             type:"default"
+    },
+    {
+        name:"Logout",
+        icon: require("../../assets/icons/logout.png")
 
-//            },
-//            {
-//             placeholder:"Last Name",
-//             secureTextEntry:false,
-//             name:"lastname",
-//             type:"default"
+    },
 
-//            },
-//        ]
-
-//     },
-//     {
-//         split:[
-//             {
-//              placeholder:"Code",
-//              secureTextEntry:false,
-//              name:"phonecode",
-//              type:"number-pad",
-//              style:{flex:0.34}
-
-//             },
-//             {
-//              placeholder:"Phone Number",
-//              secureTextEntry:false,
-//              name:"phonenumber",
-//              type:"number-pad",
-//              style:{flex:0.60}
-
-            
-//             },
-//         ],
-//     },
-//     {
-//         placeholder:"Email Address",
-//         secureTextEntry:false,
-//         name:"email",
-//         type:"email-address"
-
-//     },
-    
-// ]
-
-// export const SignupBottomFormList = [
-   
-//     {
-//         placeholder:"Password",
-//         secureTextEntry:true,
-//         name:"password",
-//         type:"password"
-        
-//     },
-//     {
-//         placeholder:"Referal Code",
-//         secureTextEntry:false,
-//         name:"referalcode",
-//         type:"number-pad"
-//     },
-    
-// ]
-
-
-// export const BottomNavOptions = [
-//     {
-//         path:"Home",
-//         component:Home,
-//         Icon:({color})=><MCI name="home" size={normalizeSize(22)} color={color} style={{backgroundColor:"transparent"}} />,
-//         Text:({color})=><Text style={[Styles.normalText,{color:color}]}>Home</Text>,
-//         Header:()=><LocationHeader />
-
-//     },
-//     {
-//         path:"Booking",
-//         component:Home,
-//         Icon:({color})=><MCI name="file-document" size={normalizeSize(20)} color={color}  />,
-//         Text:({color})=><Text style={[Styles.normalText,{color:color}]}>Booking</Text>,
-//         Header:()=><LocationHeader />
-
-//     },
-//     {
-//         path:"Notification",
-//         component:Home,
-//         Icon:({color})=><FW5 name="bell" size={normalizeSize(19)} color={color} solid/>,
-//         Text:({color})=><Text style={[Styles.normalText,{color:color}]}>Notification</Text>,
-//         Header:()=><LocationHeader />
-    
-//     },
-//     {
-//         path:"Account",
-//         component:Account,
-//         Icon:({color})=><FW5 name="user" size={normalizeSize(20)} color={color} solid />,
-//         Text:({color})=><Text style={[Styles.normalText,{color:color}]}>Account</Text>,
-//         Header:()=><AccountHeader />
-
-//     },
-// ]
-
-
-// export const ServiceOption = [
-//     {
-//         icon:require("../../assets/images/box1.png"),
-//         title:"delivery",
-//         bg:Colors().themeGreen,
-//         style:{height:normalizeSize(30), width:normalizeSize(80), resizeMode:"contain"}
-
-//     },
-//     {
-//         icon:require("../../assets/images/car1.png"),
-//         title:"Foodie",
-//         bg:Colors().themeOrange,
-//         style:{height:normalizeSize(30), width:normalizeSize(80), resizeMode:"contain"}
-//     },
-    
-// ]
-
-
-// export const AccountMenuList = [
-//     {
-//         Icon: ()=><Image source={require("../../assets/icons/user1.png")} style={{width:normalizeSize(30), height:normalizeSize(30), resizeMode:"contain"}} />,
-//         title:"Profile",
-//         path:"Profile"
-//     },
-//     {
-//         Icon: ()=><Image source={require("../../assets/icons/location-pin1.png")} style={{width:normalizeSize(30), height:normalizeSize(30), resizeMode:"contain"}} />,
-//         title:"Manage Addresses",
-//         path:"ManageAddresses"
-
-//     },
-//     {
-//         Icon: ()=><Image source={require("../../assets/icons/insurance1.png")} style={{width:normalizeSize(30), height:normalizeSize(30), resizeMode:"contain"}} />,
-//         title:"Privacy Policy"
-//     },
-//     {
-//         Icon: ()=><Image source={require("../../assets/icons/headphones1.png")} style={{width:normalizeSize(30), height:normalizeSize(30), resizeMode:"contain"}} />,
-//         title:"Support"
-//     },
-//     {
-//         Icon: ()=><Image source={require("../../assets/icons/headphones1.png")} style={{width:normalizeSize(30), height:normalizeSize(30), resizeMode:"contain"}} />,
-//         title:"Invite Referrals"
-//     },
-//     {
-//         Icon: ()=><Image source={require("../../assets/icons/credit-card1.png")} style={{width:normalizeSize(30), height:normalizeSize(30), resizeMode:"contain"}} />,
-//         title:"Avaiable Payment"
-//     },
-// ]
-
-
-// export const ProfileEditFormTopList = [
-    
-       
-//     {
-//         placeholder:"First Name",
-//         secureTextEntry:false,
-//         name:"firstname",
-//         type:"default"
-
-//     },
-//     {
-//         placeholder:"Last Name",
-//         secureTextEntry:false,
-//         name:"lastname",
-//         type:"default"
-
-//     },
-       
-
-    
-//     {
-//         split:[
-//             {
-//              placeholder:"Code",
-//              secureTextEntry:false,
-//              name:"phonecode",
-//              type:"number-pad",
-//              style:{flex:0.34}
-
-//             },
-//             {
-//              placeholder:"Phone Number",
-//              secureTextEntry:false,
-//              name:"phonenumber",
-//              type:"number-pad",
-//              style:{flex:0.60}
-
-            
-//             },
-//         ],
-//     },
-//     {
-//         placeholder:"Email Address",
-//         secureTextEntry:false,
-//         name:"email",
-//         type:"email-address"
-
-//     },
-    
-    
-    
-// ]
-
-
-
-
-// export const ProfileEditFormBottomList = [
-   
-//     {
-//         placeholder:"Country",
-//         secureTextEntry:false,
-//         name:"country",
-//         type:"default"
-        
-//     },
-//     {
-//         placeholder:"City",
-//         secureTextEntry:false,
-//         name:"city",
-//         type:"default"
-//     },
-    
-// ]
-
-
-// export const AddAddressForm = [
-//     {
-//         placeholder:"Flat Number",
-//         secureTextEntry:false,
-//         name:"flat_number"
-
-//     },
-//     {
-//         placeholder:"Street",
-//         secureTextEntry:false,
-//         name:"street"
-
-//     },
-//     {
-//         placeholder:"Save As",
-//         secureTextEntry:false,
-//         name:"save_as"
-
-//     },
-    
-// ] 
+]

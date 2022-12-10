@@ -10,7 +10,7 @@ export default function GModal(props) {
         animationType="slide"
         transparent={true}
         visible={props.modalVisible}
-        onRequestClose={props.setData}
+        onRequestClose={props.modalVisiblity}
         >
 
         <View style={{flex: 1,backgroundColor:'#000000aa'}}>

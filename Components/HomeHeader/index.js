@@ -40,7 +40,7 @@ const HomeHeader = () => {
                         )
                     }
                 </View>
-                <TouchableRipple style={{ borderColor: ThemeLightGreen, borderWidth: 1, borderRadius: 20, marginLeft: 16 }}>
+                <TouchableRipple onPress={()=>{navigation.navigate("Profile")}} style={{ borderColor: ThemeLightGreen, borderWidth: 1, borderRadius: 20, marginLeft: 16 }}>
                     <Image source={require("../../assets/icons/profile-user1.png")} style={{ width: 25, height: 25, resizeMode: "contain" }} />
                 </TouchableRipple>
             </View>
