@@ -124,16 +124,16 @@ export const List = [
     {
         title:"Content-1",
         image:{uri :'../../assets/images/sample3.png'},
-        text:"Have items delivered to multiple customers at various locations with one order"
+        text:"Lorem ipsum dolor sit amet, consectetur adipiscing elite"
     },
     {
         title:"Content-2",
         image:{uri :'../../assets/images/sample3.png'},
-        text:"Send a package at a convenient tim, Schedule a future time and day to have your packages picked up and delivered."
+        text:"Lorem ipsum dolor sit amet, consectetur adipiscing elite"
     },
     {
         title:"Content-1",        
         image:{uri :'../../assets/images/sample3.png'},
-        text:"Have items delivered to multiple customers at various locations with one order."
+        text:"Lorem ipsum dolor sit amet, consectetur adipiscing elite"
     }
 ]

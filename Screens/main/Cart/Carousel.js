@@ -24,7 +24,7 @@ const Carousel = () => {
 
                     pagingEnabled
                     listKey={"List"}
-                    ItemSeparatorComponent={() => <View style={{ width: 8 }} />}
+                    ItemSeparatorComponent={() => <View style={{ width: 6 }} />}
                     renderItem={({ item, index }) => (
                         <RenderItemCard item={item} index={index} />
 
@@ -46,11 +46,11 @@ const RenderItemCard = React.memo(({ item, index }) => (
             <ImageBackground source={require('../../../assets/images/back_and_white_linear.png')} style={GS.container} resizeMode="stretch">
                 <View style={{ flex: 1, justifyContent: "flex-end", paddingVertical: 8 }}>
 
-                    <Rtext fontSize={7} style={{ color: "#fff" }} numberOfLines={3}>{item.text}</Rtext>
+                    <Rtext fontSize={8} fontWeight='700' style={{ color: "#fff" ,paddingLeft:7}} numberOfLines={3}>{item.text}</Rtext>
                     <View style={[GS.row_Between, { padding: 4 }]}>
-                        <Rtext fontSize={10} style={{ color: "#fff" }} numberOfLines={1}>20$</Rtext>
-                        <View style={[GS.btn, GS.center, { marginLeft: 4, padding:3 }]} >
-                            <Rtext style={{ color: "#fff" }} fontSize={10}>Add</Rtext>
+                        <Rtext fontSize={10} style={{ color: "#fff",paddingLeft:4 }} numberOfLines={1}>$20</Rtext>
+                        <View style={[GS.btn, GS.center, { marginLeft: 4,height:25,justifyContent:'center',paddingTop:10,paddingHorizontal:13,marginRight:10}]} >
+                            <Rtext style={{ color: "#fff", height:25 ,alignSelf:'center'}} fontSize={10}>Add</Rtext>
                         </View>
 
                     </View>
@@ -75,7 +75,8 @@ const styles = StyleSheet.create({
     },
     cardContainer:{
         width: (SCREEN_WIDTH /3) - 16, 
-        height: normalizeSize(85) 
+        height: normalizeSize(85),
+        marginBottom:10, 
     },
     cardContainerImage:{
         width: "100%", 

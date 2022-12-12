@@ -10,23 +10,25 @@ const deviceWidth = Math.round(Dimensions.get('window').width);
 const deviceHeight = Math.round(Dimensions.get('window').height);
 const Cart = (props) => {
   return (
-    <View   style={{flex:1, backgroundColor:'white'}}>
+    < ScrollView scrollEnabled={true}   style={{flex:1, backgroundColor:'white'}}>
       {/* Details Part */}
       <View style={{ paddingLeft:10, marginTop:10}}>
-        <Rtext fontWeight='700'>My Cart</Rtext>
-        <Rtext fontWeight='400' fontSize={10}>2 items </Rtext>
-        <Rtext fontWeight='400' fontSize={10}>Order ID- OID54211874 </Rtext>
-        <Rtext fontWeight='700' fontSize={12}>Delivery in 12 minutes</Rtext>
+        <Rtext fontWeight='700' fontSize={15} style={{paddingTop:5}}>My Cart</Rtext>
+        <View style={{marginTop:10}}>
+            <Rtext fontWeight='400' fontSize={10} style={styles.Rcolor}>2 items </Rtext>
+            <Rtext fontWeight='400' fontSize={10} style={styles.Rcolor}>Order ID- OID54211874 </Rtext>
+            <Rtext fontWeight='700' fontSize={12} >Delivery in 12 minutes</Rtext>
+        </View>
       </View>
       {/* End of Details && Start of Display */}
       <View>
-        <View style={{flexDirection:'row', marginTop:4, paddingLeft:15}}>
+        <View style={{flexDirection:'row', marginTop:25, paddingLeft:15}}>
           <Image source={require('../../../assets/images/Cart_1.png')} style={{resizeMode:"contain",height:100,width:80}}/>
           <View style={{marginTop:15, marginLeft:15}}>            
             <Rtext fontWeight='400' fontSize={12} style={[styles.Rcolor,{width:deviceWidth-100}]}>Lorem ipsum dolor sit amet, consectetur adipiscing elite</Rtext>
             <View style={{flexDirection:'row', marginTop:5}}>
               <Rtext style={{marginHorizontal:20}}> ₹80</Rtext>
-              <GCButton style={{height:27, width:100,borderRadius:4}} />
+              <GCButton style={{height:30, width:70,borderRadius:4}} />
             </View>
           </View>
         </View>
@@ -36,8 +38,8 @@ const Cart = (props) => {
           <View style={{marginTop:15, marginLeft:15}}>            
             <Rtext fontWeight='400' fontSize={12} style={[styles.Rcolor,{width:deviceWidth-100}]}>Lorem ipsum dolor sit amet, consectetur adipiscing elite</Rtext>
             <View style={{flexDirection:'row', marginTop:8}}>
-              <Rtext style={{marginHorizontal:20}}> ₹80</Rtext>
-              <GCButton style={{height:27, width:100,borderRadius:4}} textStyle={{fontSize:13}} data="Place Order"/>
+              <Rtext style={{marginHorizontal:20}}> ₹700</Rtext>
+              <GCButton style={{height:30, width:70,borderRadius:4}} textStyle={{fontSize:13}} data="Place Order"/>
             </View>
           </View>
         </View>
@@ -45,14 +47,14 @@ const Cart = (props) => {
       </View>
       {/* End of Display && Start of Checkouts */}
       <View>
-        <Rtext fontWeight='700' style={{paddingLeft:10, paddingBottom:5}}>Before you checkout</Rtext>
+        <Rtext fontWeight='700' style={{paddingLeft:10, paddingTop:30, paddingBottom:20}}>Before you checkout</Rtext>
          {/* Starting Carosel */}
           <Carousel/>
          {/* Endinging Carosel */}
-        <Rtext fontWeight='700' style={{marginVertical:10, paddingLeft:10}}>Bill details</Rtext>
+        <Rtext fontWeight='700' style={{marginVertical:20, paddingLeft:10}}>Bill details</Rtext>
       </View>
       {/* End of Checkouts */}
-      <ScrollView style={{paddingLeft:10 }}>
+      <View style={{paddingLeft:10 }}>
         <View style={[styles.ROW,{marginVertical:4, justifyContent:'space-between'}]}>
           <Rtext fontSize={12} style={[styles.Rcolor,{alignSelf:'flex-start'}]}>Lorem Ipsum MRP</Rtext>
           <Rtext fontSize={12} style={[styles.Rcolor,{alignSelf:'flex-end', paddingRight:80}]}>₹85</Rtext>
@@ -73,12 +75,12 @@ const Cart = (props) => {
           <Rtext fontSize={12} style={[styles.Rcolor,{alignSelf:'flex-start'}]}>Grand Total</Rtext>
           <Rtext fontSize={12} style={[styles.Rcolor,{alignSelf:'flex-end', paddingRight:70}]}>₹765</Rtext>
         </View>
-      </ScrollView>
+      </View>
       {/* End Value start */}
       <View>
         <View style={[styles.Proceed,styles.ROW]}>
           <View>
-            <Rtext style={{color:'white'}}>2 items :  ₹780    ₹765</Rtext>
+            <Rtext style={{color:'white'}}>2 items :  <Text style={{color:'white',textDecorationLine:'line-through'}}>₹780</Text>    ₹765</Rtext>
           </View>
           <TouchableRipple>
             <View style={[styles.ROW, {alignItems:'center'}]}>
@@ -95,7 +97,7 @@ const Cart = (props) => {
       </View>
       </View>
       {/* End value end */}
-    </View>
+    </ScrollView>
   )
 }
 
@@ -111,6 +113,8 @@ const styles = StyleSheet.create({
     width:normalizeSize(250),
     backgroundColor:'#77A615',
     marginHorizontal:40,
+    marginTop:30,
+    marginBottom:10,
     borderRadius:10,
   }
 })

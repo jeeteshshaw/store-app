@@ -17,7 +17,7 @@ export default function Payment(props) {
           <Image source={require("../../../assets/images/cash-on-delivery-2.png")}  style={{ resizeMode:"contain",height:80,width:80, marginLeft:10}}/>
           <View style={{ paddingTop:20,paddingLeft:10}}>
             <Rtext fontWeight='400' fontSize={12} style={{width:270, color:'#7C7B7B'}}>Please pay ₹765 to the delivery executive when your order is delivered</Rtext>
-            <View style={{paddingLeft:5,paddingTop:5, paddingBottom:10}}>
+            <View style={{paddingTop:5, paddingBottom:30, paddingTop:10}}>
             <GButton press={()=>(props.navigation.navigate('Cart'))} style={{height:27, width:100,borderRadius:4,alignSelf:'flex-start'}} textStyle={{fontSize:13}} data="Place Order"/>
             </View>
           </View>
@@ -41,9 +41,9 @@ export default function Payment(props) {
             </View>
           </View>
           <View style={{flexDirection:'row', marginHorizontal:80}}>
-            <Rtext fontWeight='400' fontSize={12} style={{color:'#056721'}}>Mobile and more options</Rtext>
+            <Rtext fontWeight='400' fontSize={12} style={{color:'#056721'}}><Text style={{color:'black'}}>Mobile and</Text> more options</Rtext>
             <View style={{flexDirection:'row', paddingTop:7, marginLeft:10}}>
-            <Image source={require('../../../assets/icons/down-filled1.png')} style={{ resizeMode:'contain', height:12,width:12}}/>
+            <Image source={require('../../../assets/icons/down-filled1.png')} style={{ resizeMode:'contain', height:12,width:12, tintColor:'#056721'}}/>
             </View>
           </View>
         </View>
