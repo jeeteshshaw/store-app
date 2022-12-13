@@ -10,6 +10,7 @@ import Location from '../Screens/Auth/Location';
 import SkipLog from '../Screens/Auth/SkipLog';
 import Payment from '../Screens/main/Payment/index';
 import Cart from '../Screens/main/Cart';
+import FAQ from '../Screens/main/FAQ';
 // import Authless_Home from '../Screens/Authless';
 
 // import Login from '../Screens/authScreens/Login';
@@ -36,9 +37,9 @@ const AuthScreenNavigation = () => {
       screenOptions={{
         headerTintColor: 'white',
         headerStyle: { backgroundColor: 'tomato' },
-        headerShown:true,
+        headerShown:false,
       }}
-      initialRouteName={"SkipLog"}
+      initialRouteName={"Payment"}
       >
         <Stack.Screen name="SkipLog" component={SkipLog} />
         <Stack.Screen name="Location" component={Location} />
@@ -50,6 +51,7 @@ const AuthScreenNavigation = () => {
         <Stack.Screen name='Enter_Email' component={Enter_Email}/>
         <Stack.Screen name='Cart' component={Cart}/>
         <Stack.Screen name='Payment' component={Payment}/>
+        <Stack.Screen name='FAQ' component={FAQ}/>
       </Stack.Navigator>     
   );
 };

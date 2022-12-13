@@ -26,6 +26,8 @@ import ProductListing from '../../Screens/main/ProductListing';
 import ProductDetails from '../../Screens/main/ProductDetails';
 import Search from '../../Screens/main/Search';
 import Profile from '../../Screens/main/Profile';
+import Cart from '../../Screens/main/Cart';
+
 const Stack = createNativeStackNavigator()
 
 const StackNavigation = () => {
@@ -86,6 +88,18 @@ const StackNavigation = () => {
           </TouchableOpacity>)
         }}
       />
+
+<Stack.Screen
+        name="Cart"
+        component={Cart}
+
+        options={{
+          // header: () => <HomeHeader />
+          // headerShown: false
+        }}
+      />
+
+
       {/* <Stack.Screen
           name="Profile"
           component={Profile}

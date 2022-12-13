@@ -2,6 +2,7 @@ import { View, Text,Image,Dimensions,StyleSheet} from 'react-native'
 import React from 'react'
 import { Rtext } from '../../../Components/Rtext'
 import GButton from '../../../Components/GButton'
+import { normalizeSize } from '../../../utility';
 
 const deviceWidth = Math.round(Dimensions.get('window').width);
 const deviceHeight = Math.round(Dimensions.get('window').height);
@@ -33,16 +34,16 @@ export default function Payment(props) {
             <Image source={require('../../../assets/icons/arrow_right.png')} style={{ height:15,width:15,resizeMode:'contain',color:'#A7A7A7'}} />
             </View>
           </View>
-          <View style={{flexDirection:'row',paddingLeft:10}}>
-            <Image source={require('../../../assets/images/UPI.png')}  style={{height:80, width:120,resizeMode:"contain",paddingLeft:10}} />
-            <Rtext fontWeight='400' fontSize={12} style={{paddingTop:25, paddingLeft:10,color:'#7C7B7B'}}>Pay via UPI</Rtext>
-            <View style={{marginHorizontal:140,paddingTop:25}}>
+          <View style={{flexDirection:'row',paddingLeft:10,justifyContent:'flex-start', alignItems:'center'}}>
+            <Image source={require('../../../assets/images/UPI.png')}  style={{height:normalizeSize(80), width:normalizeSize(100),resizeMode:"contain",paddingLeft:10}} />
+            <Rtext fontWeight='400' fontSize={12} style={{paddingTop:normalizeSize(10), paddingLeft:10,color:'#7C7B7B'}}>Pay via UPI</Rtext>
+            <View style={{alignSelf:'center',paddingLeft:normalizeSize(110)}}>
             <Image source={require('../../../assets/icons/arrow_right.png')} style={{ height:15,width:15,resizeMode:'contain',color:'#A7A7A7'}} />
             </View>
           </View>
           <View style={{flexDirection:'row', marginHorizontal:80}}>
             <Rtext fontWeight='400' fontSize={12} style={{color:'#056721'}}><Text style={{color:'black'}}>Mobile and</Text> more options</Rtext>
-            <View style={{flexDirection:'row', paddingTop:7, marginLeft:10}}>
+            <View style={{flexDirection:'row', paddingTop:5, marginLeft:10}}>
             <Image source={require('../../../assets/icons/down-filled1.png')} style={{ resizeMode:'contain', height:12,width:12, tintColor:'#056721'}}/>
             </View>
           </View>

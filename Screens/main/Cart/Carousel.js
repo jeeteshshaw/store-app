@@ -21,13 +21,11 @@ const Carousel = () => {
                     keyExtractor={(item, index) => index + "aasdasd"}
                     // numColumns={5}
                     horizontal
-
                     pagingEnabled
                     listKey={"List"}
                     ItemSeparatorComponent={() => <View style={{ width: 6 }} />}
                     renderItem={({ item, index }) => (
                         <RenderItemCard item={item} index={index} />
-
                     )}
                 />
                 <View style={[styles.rightArrowContainer, GS.center]} >
@@ -50,12 +48,10 @@ const RenderItemCard = React.memo(({ item, index }) => (
                     <View style={[GS.row_Between, { padding: 4 }]}>
                         <Rtext fontSize={10} style={{ color: "#fff",paddingLeft:4 }} numberOfLines={1}>$20</Rtext>
                         <View style={[GS.btn, GS.center, { marginLeft: 4,height:25,justifyContent:'center',paddingTop:10,paddingHorizontal:13,marginRight:10}]} >
-                            <Rtext style={{ color: "#fff", height:25 ,alignSelf:'center'}} fontSize={10}>Add</Rtext>
+                            <Rtext style={{ color: "#fff", height:normalizeSize(18) ,alignSelf:'center'}} fontSize={10}>Add</Rtext>
                         </View>
-
                     </View>
                 </View>
-
             </ImageBackground>
         </ImageBackground>
     </View>
@@ -80,6 +76,6 @@ const styles = StyleSheet.create({
     },
     cardContainerImage:{
         width: "100%", 
-        height: normalizeSize(85) 
+        height: normalizeSize(100) 
     }
 })
