@@ -124,4 +124,21 @@ export const ProfileOptionList = [
 
     },
 
+];
+export const List = [
+    {
+        title:"Content-1",
+        image:{uri :'../../assets/images/sample3.png'},
+        text:"Lorem ipsum dolor sit amet, consectetur adipiscing elite"
+    },
+    {
+        title:"Content-2",
+        image:{uri :'../../assets/images/sample3.png'},
+        text:"Lorem ipsum dolor sit amet, consectetur adipiscing elite"
+    },
+    {
+        title:"Content-1",        
+        image:{uri :'../../assets/images/sample3.png'},
+        text:"Lorem ipsum dolor sit amet, consectetur adipiscing elite"
+    }
 ]
