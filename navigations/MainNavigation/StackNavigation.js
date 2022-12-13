@@ -26,6 +26,13 @@ import ProductListing from '../../Screens/main/ProductListing';
 import ProductDetails from '../../Screens/main/ProductDetails';
 import Search from '../../Screens/main/Search';
 import Profile from '../../Screens/main/Profile';
+import ProfileDetails from '../../Screens/main/ProfileDetails';
+import ProfileEdit from '../../Screens/main/ProfileEdit';
+import ProfileResetPassword from '../../Screens/main/ProfileResetPassword';
+import ManageAddress from '../../Screens/main/ManageAddress';
+import EditAddress from '../../Screens/main/EditAddress';
+import MyOrder from '../../Screens/main/MyOrder';
+import OrderTrack from '../../Screens/main/OrderTrack';
 const Stack = createNativeStackNavigator()
 
 const StackNavigation = () => {
@@ -70,6 +77,80 @@ const StackNavigation = () => {
         options={{
           // header: () => <HomeHeader />
           // headerShown: false
+        }}
+      />
+       <Stack.Screen
+        name="EditAddress"
+        component={EditAddress}
+
+        options={{
+          // header: () => <HomeHeader />
+          headerShown: false
+        }}
+      />
+       <Stack.Screen
+        name="MyOrder"
+        component={MyOrder}
+
+        options={{
+          title:"My Orders"
+          // header: () => <HomeHeader />
+          // headerShown: false
+        }}
+      />
+       <Stack.Screen
+        name="OrderTrack"
+        component={OrderTrack}
+
+        options={{
+          title:"Order Track"
+          // header: () => <HomeHeader />
+          // headerShown: false
+        }}
+      />
+
+      <Stack.Screen
+        name="ProfileDetails"
+        component={ProfileDetails}
+        
+        options={{
+          // header: () => <HomeHeader />
+          headerShown: false,
+          presentation: "transparentModal",
+          transparentCard: true
+        }}
+      />
+       <Stack.Screen
+        name="ProfileEdit"
+        component={ProfileEdit}
+        
+        options={{
+          // header: () => <HomeHeader />
+          headerShown: false,
+          presentation: "transparentModal",
+          transparentCard: true
+        }}
+      />
+       <Stack.Screen
+        name="ProfileResetPassword"
+        component={ProfileResetPassword}
+        
+        options={{
+          // header: () => <HomeHeader />
+          headerShown: false,
+          presentation: "transparentModal",
+          transparentCard: true
+        }}
+      />
+       <Stack.Screen
+        name="ManageAddress"
+        component={ManageAddress}
+        
+        options={{
+          // header: () => <HomeHeader />
+          headerShown: false,
+          presentation: "transparentModal",
+          transparentCard: true
         }}
       />
       <Stack.Screen

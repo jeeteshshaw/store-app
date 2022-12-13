@@ -11,20 +11,27 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import StackNavigation from './navigations/MainNavigation/StackNavigation';
 import AuthScreenNavigation from './navigations/AuthNavigations';
-import { useLayoutEffect } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import useFonts from './utility/FontLoad/index'
 import { MenuProvider } from 'react-native-popup-menu';
-export default function App() {
-  const fontLoad = async()=>{
-    await useFonts();
+import AppLoading from 'expo-app-loading';
 
+export default function App() {
+  const [IsReady, setIsReady] = useState(false)  
+  const LoadFonts = async()=>{
+    await fontLoad()
+    return true
   }
-  useLayoutEffect(() => {
-    fontLoad()
-  
-   
-  }, [])
-  
+
+  if (!IsReady) {
+    return ( 
+      <AppLoading
+        startAsync={LoadFonts}
+        onFinish={() => setIsReady(true)}
+        onError={() => {}}
+      />
+    );
+  }
   return (
     <>
        <StatusBar hidden={false} style="light" />

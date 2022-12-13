@@ -9,9 +9,11 @@ import { ProfileOptionList } from '../../../store/static'
 import { ThemeLightGreen } from '../../../config/Colors'
 import { LogoutSuccessfully } from '../../../store/auth'
 import { useDispatch } from 'react-redux'
+import { useNavigation } from '@react-navigation/native'
 
 const Profile = () => {
     const dispatch = useDispatch();
+    const navigation = useNavigation();
   return (
     <View style={[Globalstyles.container, {backgroundColor:"#fff"}]}>
       <ScrollView>
@@ -30,7 +32,7 @@ const Profile = () => {
                         ItemSeparatorComponent={()=><View style={{height:normalizeSize(20)}} />}
                         renderItem={({item, index})=>(
                             <TouchableOpacity onPress={()=>{
-                                item==="Logout" && dispatch(LogoutSuccessfully())
+                                item==="Logout"? dispatch(LogoutSuccessfully()): navigation.navigate(item.path)
                             }} style={Globalstyles.row_Between}>
                                 <View style={Globalstyles.row}>
                                     <View style={[{width:normalizeSize(30), height:normalizeSize(30), borderRadius:normalizeSize(15), backgroundColor:"#BAEE4D"}, Globalstyles.center]}>

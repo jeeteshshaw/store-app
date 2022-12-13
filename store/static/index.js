@@ -90,22 +90,27 @@ export const CategoryList = [
 export const ProfileOptionList = [
     {
         name:"Profile",
-        icon: require("../../assets/icons/user1.png")
+        icon: require("../../assets/icons/user1.png"),
+        path:"ProfileDetails"
 
     },
     {
         name:"Save Address",
-        icon: require("../../assets/icons/white_pin1.png")
+        icon: require("../../assets/icons/white_pin1.png"),
+        path:"ManageAddress"
 
     },
     {
         name:"My Order",
-        icon: require("../../assets/icons/order1.png")
+        icon: require("../../assets/icons/order1.png"),
+        path:"MyOrder"
+
 
     },
     {
         name:"Cart",
-        icon: require("../../assets/icons/cart1.png")
+        icon: require("../../assets/icons/cart1.png"),
+        path:"ManageAddress"
 
     },
     {
