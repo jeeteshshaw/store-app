@@ -26,7 +26,7 @@ const Globalstyles = StyleSheet.create({
     btn:{
         backgroundColor: ThemeLightGreen, 
         borderRadius: 3, 
-        padding: 8 
+        paddingHorizontal: 8 
     },
     
     

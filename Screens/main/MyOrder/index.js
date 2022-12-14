@@ -17,8 +17,8 @@ const MyOrder = () => {
         keyExtractor={(item)=> item+"sadasdasdasd"}
         data= {[1,2,3,4,5,6]}
         showsVerticalScrollIndicator={false}
-        renderItem={({item})=>(
-            <RenderItem isGrey={item>2}  />
+        renderItem={({item, index})=>(
+            <RenderItem isGrey={item>2} index={index} />
         )}
       />
         
@@ -30,7 +30,7 @@ export default MyOrder
 
 const styles = StyleSheet.create({})
 
-const RenderItem = ({isGrey})=>{
+const RenderItem = ({isGrey, index})=>{
     const navigation = useNavigation()
     return (
         <View style={{padding:10, borderRadius:7, borderColor:"#D9D9D9", borderWidth:1}}>
@@ -51,7 +51,7 @@ const RenderItem = ({isGrey})=>{
             </View>
             <View style={[{marginVertical:8},GS.row_Between]}>
                 <Rtext fontSize={11} style={{color:"#615F5F"}}>Will placed on wed, 7 Dec, 2022, 10:05am</Rtext>
-                <TouchableOpacity onPress={()=> navigation.navigate("OrderTrack")} style={GS.row}>
+                <TouchableOpacity onPress={()=> navigation.navigate(index>1?"OrderTrack2":"OrderTrack")} style={GS.row}>
                     <Rtext fontSize={12} style={{color:"#648D0B"}} fontWeight={"700"}>View Details </Rtext>
                     <Image source={require("../../../assets/icons/right_arrow.png")} style={{width:12, height:12, resizeMode:"contain"}} />
                 </TouchableOpacity>
