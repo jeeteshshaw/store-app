@@ -7,7 +7,7 @@ import { TouchableRipple } from 'react-native-paper';
 function CompletePayment(props){
     return(
       <View>
-          <Modal animationType="slide" transparent={true} visible={false}>
+          <Modal animationType="slide" transparent={true} visible={props.modalVisiblity}>
             <View style={{flex: 1,backgroundColor:'#000000aa',justifyContent:'center',alignItems:'center'}}>
               <View style={styles.modalView}>
                 <TouchableRipple style={styles.button}onPress={()=>(console.log("Tick is clicked !!"))}>
@@ -17,7 +17,7 @@ function CompletePayment(props){
                     <Rtext fontSize={18} fontWeight="700" style={styles.text}>Your order has been confirmed</Rtext>
                     <Rtext fontSize={12} fontWeight="700" style={[{color:'black',alignSelf:'center',marginTop:normalizeSize(30)}]}>Thank You for purchase !</Rtext>
                     <Rtext fontSize={11} style={[{color:'#6A6868',alignSelf:'center',}]}>Your Order ID is - OID54211874</Rtext>
-                    <TouchableRipple onPress={()=>(console.log("Track Order"))}>
+                    <TouchableRipple onPress={()=>(console.log("Tracking .........."))}>
                     <Rtext fontSize={12} fontWeight="700" style={styles.tracking}>Track your order</Rtext>
                     </TouchableRipple>
                     <Rtext fontSize={12} style={styles.text}>Hooray! You saved ₹15 on delivery charge and</Rtext>

@@ -16,9 +16,11 @@ const deviceHeight = Math.round(Dimensions.get('window').height);
 
 function Cart(props){
   const [first, setfirst] = useState(false);
-   const Update_State = async(props)=>{
+   const Update_State =(props)=>{
     setfirst(true);
-    await sleep(1000);
+    setTimeout(function(){
+      setfirst(false);
+    },5000);
   }
   return (
     <ScrollView scrollEnabled={true}   style={{flex:1, backgroundColor:'#fff'}}>
@@ -68,7 +70,7 @@ function Cart(props){
               <View style={Globalstyles.row}>
                     <Rtext fontSize={12} style={{paddingLeft:10}}>Lorem Ipsum MRP</Rtext>
               </View>
-              <View style={{paddingRight:normalizeSize(60)}}>
+              <View style={{paddingRight:normalizeSize(67)}}>
                     <Rtext fontSize={12}>₹85</Rtext>
               </View>
         </View>
@@ -84,7 +86,7 @@ function Cart(props){
               <View style={Globalstyles.row}>
                     <Rtext fontSize={12} style={{paddingLeft:10}}>Product Discount</Rtext>
               </View>
-              <View style={{paddingRight:normalizeSize(60)}}>
+              <View style={{paddingRight:normalizeSize(70)}}>
                     <Rtext fontSize={12}>- ₹15</Rtext>
               </View>
         </View>
@@ -92,7 +94,7 @@ function Cart(props){
               <View style={Globalstyles.row}>
                     <Rtext fontSize={12} style={{paddingLeft:10}}>Delivery charges</Rtext>
               </View>
-              <View style={{paddingRight:normalizeSize(60)}}>
+              <View style={{paddingRight:normalizeSize(40)}}>
                     <Rtext fontSize={12}>₹15 FREE</Rtext>
               </View>
         </View>
@@ -119,7 +121,7 @@ function Cart(props){
             </View>
         </TouchableRipple>
       </View>
-      <View style={{justifyContent:'center'}}>
+      <View style={{justifyContent:'center', marginBottom:20}}>
         <Rtext fontSize={12} style={{ alignSelf:'center', color:'#77A615'}}>Hooray! You saved ₹15 on delivery charge and</Rtext>
         <Rtext fontSize={12} style={{alignSelf:'center',color:'#77A615'}}>Product discount  ₹15</Rtext>
       </View>
