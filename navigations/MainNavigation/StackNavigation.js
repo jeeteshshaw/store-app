@@ -33,6 +33,8 @@ import ManageAddress from '../../Screens/main/ManageAddress';
 import EditAddress from '../../Screens/main/EditAddress';
 import MyOrder from '../../Screens/main/MyOrder';
 import OrderTrack from '../../Screens/main/OrderTrack';
+import Cart from '../../Screens/main/Cart';
+
 const Stack = createNativeStackNavigator()
 
 const StackNavigation = () => {
@@ -167,6 +169,18 @@ const StackNavigation = () => {
           </TouchableOpacity>)
         }}
       />
+
+<Stack.Screen
+        name="Cart"
+        component={Cart}
+
+        options={{
+          // header: () => <HomeHeader />
+          // headerShown: false
+        }}
+      />
+
+
       {/* <Stack.Screen
           name="Profile"
           component={Profile}

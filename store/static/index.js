@@ -141,4 +141,31 @@ export const List = [
         image:{uri :'../../assets/images/sample3.png'},
         text:"Lorem ipsum dolor sit amet, consectetur adipiscing elite"
     }
+];
+export const FAQ_Data = [
+    {
+        key:1,
+        title:"General",
+        text:" Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet.",
+        img:'../../../assets/icons/Down_Dark.png',
+    },
+    {
+        key:2,
+        title:"Miscellaneous",
+        text:" Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet.",
+        img:'../../../assets/icons/Down_Dark.png',
+    },
+    {
+        key:3,
+        title:"Delivery",
+        text:" Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet.",
+        img:'../../../assets/icons/Down_Dark.png'
+    },
+    {
+        key:4,
+        title:"Cancellation and return",
+        text:" Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet.",
+        img:'../../../assets/icons/Up_Dark.png'
+    },
+    
 ]

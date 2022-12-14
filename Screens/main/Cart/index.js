@@ -1,16 +1,29 @@
-import { StyleSheet, Text, View,Image,Dimensions, ScrollView } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View,Image,Dimensions, ScrollView, Modal, Pressable } from 'react-native'
+import React,{useState} from 'react'
 import { Rtext } from '../../../Components/Rtext'
 import GCButton from '../../../Components/GCButton'
 import Carousel from './Carousel';
 import { TouchableRipple } from 'react-native-paper';
 import { normalizeSize } from '../../../utility';
+import CompletePayment from '../../Popups/CompletePayment';
+import Globalstyles from '../../../Styles/GlobalStyle';
 
 const deviceWidth = Math.round(Dimensions.get('window').width);
 const deviceHeight = Math.round(Dimensions.get('window').height);
-const Cart = (props) => {
+
+
+
+
+function Cart(props){
+  const [first, setfirst] = useState(false);
+   const Update_State =(props)=>{
+    setfirst(true);
+    setTimeout(function(){
+      setfirst(false);
+    },5000);
+  }
   return (
-    < ScrollView scrollEnabled={true}   style={{flex:1, backgroundColor:'white'}}>
+    <ScrollView scrollEnabled={true}   style={{flex:1, backgroundColor:'#fff'}}>
       {/* Details Part */}
       <View style={{ paddingLeft:10, marginTop:10}}>
         <Rtext fontWeight='700' fontSize={15} style={{paddingTop:5}}>My Cart</Rtext>
@@ -23,23 +36,23 @@ const Cart = (props) => {
       {/* End of Details && Start of Display */}
       <View>
         <View style={{flexDirection:'row', marginTop:25, paddingLeft:15}}>
-          <Image source={require('../../../assets/images/Cart_1.png')} style={{resizeMode:"contain",height:100,width:80}}/>
+          <Image source={require('../../../assets/images/Cart_1.png')} style={{resizeMode:"contain",height:normalizeSize(100),width:normalizeSize(80)}}/>
           <View style={{marginTop:15, marginLeft:15}}>            
-            <Rtext fontWeight='400' fontSize={12} style={[styles.Rcolor,{width:deviceWidth-100}]}>Lorem ipsum dolor sit amet, consectetur adipiscing elite</Rtext>
+            <Rtext fontWeight='400' fontSize={12} style={[styles.Rcolor,{width:normalizeSize(deviceWidth-150)}]}>Lorem ipsum dolor sit amet, consectetur adipiscing elite</Rtext>
             <View style={{flexDirection:'row', marginTop:5}}>
-              <Rtext style={{marginHorizontal:20}}> ₹80</Rtext>
-              <GCButton style={{height:30, width:70,borderRadius:4}} />
+              <Rtext style={{marginTop:6}}> ₹80</Rtext>
+              <GCButton style={{height:normalizeSize(30), width:normalizeSize(70),borderRadius:4,marginHorizontal:20}} />
             </View>
           </View>
         </View>
         {/* Element 2 */}
         <View style={{flexDirection:'row', paddingLeft:15}}>
-          <Image source={require('../../../assets/images/Cart_2.png')} style={{resizeMode:"contain",height:100,width:80}}/>
+          <Image source={require('../../../assets/images/Cart_2.png')} style={{resizeMode:"contain",height:normalizeSize(100),width:normalizeSize(80)}}/>
           <View style={{marginTop:15, marginLeft:15}}>            
             <Rtext fontWeight='400' fontSize={12} style={[styles.Rcolor,{width:deviceWidth-100}]}>Lorem ipsum dolor sit amet, consectetur adipiscing elite</Rtext>
             <View style={{flexDirection:'row', marginTop:8}}>
-              <Rtext style={{marginHorizontal:20}}> ₹700</Rtext>
-              <GCButton style={{height:30, width:70,borderRadius:4}} textStyle={{fontSize:13}} data="Place Order"/>
+              <Rtext style={{marginTop:6}}> ₹700</Rtext>
+              <GCButton style={{height:normalizeSize(30), width:normalizeSize(70),borderRadius:4, marginHorizontal:20}} textStyle={{fontSize:13}} data="Place Order"/>
             </View>
           </View>
         </View>
@@ -53,29 +66,46 @@ const Cart = (props) => {
          {/* Endinging Carosel */}
         <Rtext fontWeight='700' style={{marginVertical:20, paddingLeft:10}}>Bill details</Rtext>
       </View>
-      {/* End of Checkouts */}
-      <View style={{paddingLeft:10 }}>
-        <View style={[styles.ROW,{marginVertical:4, justifyContent:'space-between'}]}>
-          <Rtext fontSize={12} style={[styles.Rcolor,{alignSelf:'flex-start'}]}>Lorem Ipsum MRP</Rtext>
-          <Rtext fontSize={12} style={[styles.Rcolor,{alignSelf:'flex-end', paddingRight:80}]}>₹85</Rtext>
+        <View style={Globalstyles.row_Between}>
+              <View style={Globalstyles.row}>
+                    <Rtext fontSize={12} style={{paddingLeft:10}}>Lorem Ipsum MRP</Rtext>
+              </View>
+              <View style={{paddingRight:normalizeSize(67)}}>
+                    <Rtext fontSize={12}>₹85</Rtext>
+              </View>
         </View>
-        <View style={[styles.ROW,{marginVertical:4,justifyContent:'space-between'}]}>
-          <Rtext fontSize={12} style={[styles.Rcolor,{alignSelf:'flex-start'}]}>Lorem Ipsum MRP</Rtext>
-          <Rtext fontSize={12} style={[styles.Rcolor,{alignSelf:'flex-end', paddingRight:70}]}>₹700</Rtext>
+        <View style={Globalstyles.row_Between}>
+              <View style={Globalstyles.row}>
+                    <Rtext fontSize={12} style={{paddingLeft:10}}>Lorem Ipsum MRP</Rtext>
+              </View>
+              <View style={{paddingRight:normalizeSize(60)}}>
+                    <Rtext fontSize={12}>₹700</Rtext>
+              </View>
         </View>
-        <View style={[styles.ROW,{marginVertical:4, justifyContent:'space-between'}]}>
-          <Rtext fontSize={12} style={[styles.Rcolor,{alignSelf:'flex-start'}]}>Product Discount</Rtext>
-          <Rtext fontSize={12} style={[styles.Rcolor,{alignSelf:'flex-end', paddingRight:80}]}>- ₹15</Rtext>
+        <View style={Globalstyles.row_Between}>
+              <View style={Globalstyles.row}>
+                    <Rtext fontSize={12} style={{paddingLeft:10}}>Product Discount</Rtext>
+              </View>
+              <View style={{paddingRight:normalizeSize(70)}}>
+                    <Rtext fontSize={12}>- ₹15</Rtext>
+              </View>
         </View>
-        <View style={[styles.ROW,{marginVertical:4, justifyContent:'space-between'}]}>
-          <Rtext fontSize={12} style={[styles.Rcolor, {alignSelf:'flex-start'}]}>Delivery charge  </Rtext>
-          <Rtext fontSize={12} style={[styles.Rcolor,{ alignSelf:'flex-end', marginRight:45}]}>₹15 FREE</Rtext>
+        <View style={Globalstyles.row_Between}>
+              <View style={Globalstyles.row}>
+                    <Rtext fontSize={12} style={{paddingLeft:10}}>Delivery charges</Rtext>
+              </View>
+              <View style={{paddingRight:normalizeSize(40)}}>
+                    <Rtext fontSize={12}>₹15 FREE</Rtext>
+              </View>
         </View>
-        <View style={[styles.ROW,{marginVertical:2, justifyContent:'space-between'}]}>
-          <Rtext fontSize={12} style={[styles.Rcolor,{alignSelf:'flex-start'}]}>Grand Total</Rtext>
-          <Rtext fontSize={12} style={[styles.Rcolor,{alignSelf:'flex-end', paddingRight:70}]}>₹765</Rtext>
+        <View style={Globalstyles.row_Between}>
+              <View style={Globalstyles.row}>
+                    <Rtext fontSize={12} style={{paddingLeft:10}}>Grand Total</Rtext>
+              </View>
+              <View style={{paddingRight:normalizeSize(60)}}>
+                    <Rtext fontSize={12}>₹765</Rtext>
+              </View>
         </View>
-      </View>
       {/* End Value start */}
       <View>
         <View style={[styles.Proceed,styles.ROW]}>
@@ -84,24 +114,25 @@ const Cart = (props) => {
           </View>
           <TouchableRipple>
             <View style={[styles.ROW, {alignItems:'center'}]}>
-            <Rtext style={{color:'white'}}>Proceed</Rtext>
-            <View style={{paddingLeft:14}}>
+            <Rtext style={{color:'#fff'}}>Proceed</Rtext>
+            <TouchableRipple onPress={Update_State} style={{paddingLeft:14}}>
             <Image source={require('../../../assets/images/white_right_arrow.png')} style={{resizeMode:'contain',height:12,width:12}}/>
-            </View>
+            </TouchableRipple>
             </View>
         </TouchableRipple>
       </View>
-      <View style={{justifyContent:'center'}}>
+      <View style={{justifyContent:'center', marginBottom:20}}>
         <Rtext fontSize={12} style={{ alignSelf:'center', color:'#77A615'}}>Hooray! You saved ₹15 on delivery charge and</Rtext>
         <Rtext fontSize={12} style={{alignSelf:'center',color:'#77A615'}}>Product discount  ₹15</Rtext>
       </View>
       </View>
       {/* End value end */}
+      <CompletePayment modalactivity={Update_State} modalVisiblity={first} text="Your Order is Confirmed" />
     </ScrollView>
   )
 }
 
-export default Cart
+export default Cart;
 
 const styles = StyleSheet.create({
   ROW:{flexDirection:'row'},
@@ -116,5 +147,21 @@ const styles = StyleSheet.create({
     marginTop:30,
     marginBottom:10,
     borderRadius:10,
+  },
+  modalView: {
+    marginTop: 20,
+    backgroundColor: "white",
+    borderRadius: 20,
+    
+    shadowColor: "#000",
+    height:'40%',
+    width:'90%',
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
   }
 })

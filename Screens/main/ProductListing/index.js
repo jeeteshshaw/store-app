@@ -1,4 +1,4 @@
-import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { FlatList, Image, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import Styles from '../../../Styles'
 import GS from '../../../Styles/GlobalStyle'
@@ -18,16 +18,16 @@ const ProductListing = () => {
   return (
     <View style={GS.container}>
       <View style={GS.row}>
-        <View style={{ height: SCREEN_HEIGHT, width: normalizeSize(75), alignItems: "center", elevation: 2, backgroundColor: "#fff" }}>
+        <View style={{ height: SCREEN_HEIGHT-StatusBar.currentHeight, width: normalizeSize(75), alignItems: "center", elevation: 2, backgroundColor: "#fff" }}>
           <LeftCatrgoryList />
         </View>
         <View style={{ flex: 1 }}>
-          <View style={{ flex: 1, flexDirection: "row", marginHorizontal:4 }}>
+          <View style={{ flex: 1, flexDirection: "row", paddingHorizontal:4 }}>
             
             <FlatList
-              data={[1,2,3,4,5,6,7,8,9,10]}
+              data={[1,2,3,4,5,6,7,8,9,10,12,12,18]}
               numColumns={3}
-              // ItemSeparatorComponent={()=><View style={{height:16}} />}
+              ListFooterComponent={()=><View style={{height:normalizeSize(50)}} />}
               renderItem={({index})=>(
 
                 <View style={{ width: ((SCREEN_WIDTH - normalizeSize(75)) / 3) - 8, height: normalizeSize(130),margin:4  }}>
