@@ -178,7 +178,8 @@ const StackNavigation = () => {
 
         options={{
           // header: () => <HomeHeader />
-          // headerShown: false
+          headerShown: true,
+          title:'Bill total : ₹765 '
         }}
       />
 <Stack.Screen

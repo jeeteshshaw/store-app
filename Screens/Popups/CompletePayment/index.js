@@ -3,8 +3,16 @@ import React from 'react'
 import { Rtext } from '../../../Components/Rtext';
 import { normalizeSize } from '../../../utility';
 import { TouchableRipple } from 'react-native-paper';
+import { useState,useEffect} from 'react';
+// import { useEffect } from 'react';
 
 function CompletePayment(props){
+  useEffect(() => {
+    props.modalactivity();
+  },[])
+  
+  
+  
     return(
       <View>
           <Modal animationType="slide" transparent={true} visible={props.modalVisiblity}>

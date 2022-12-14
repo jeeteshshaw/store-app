@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View,Image,Dimensions, ScrollView, Modal, Pressable } from 'react-native'
+import { StyleSheet, Text, View,Image,Dimensions, ScrollView} from 'react-native'
 import React,{useState} from 'react'
 import { Rtext } from '../../../Components/Rtext'
 import GCButton from '../../../Components/GCButton'
@@ -16,12 +16,19 @@ const deviceHeight = Math.round(Dimensions.get('window').height);
 
 
 function Cart(props){
-  const [first, setfirst] = useState(false);
+  const [show, setShow] = useState(false);
    const Update_State =(props)=>{
-    setfirst(true);
+    console.log("Reached Update State")
     setTimeout(function(){
-      setfirst(false);
+      Update();
     },5000);
+  }
+
+
+  const Update =()=>{
+    console.log("From Update --------------------------")
+    setShow(!show);
+    console.log("From Down Update -------",show)
   }
   
 
@@ -115,7 +122,7 @@ function Cart(props){
           <View>
             <Rtext style={{color:'white'}}>2 items :  <Text style={{color:'white',textDecorationLine:'line-through'}}>₹780</Text>    ₹765</Rtext>
           </View>
-          <TouchableRipple onPress={()=>props.navigation.navigate('Payment',{amount:800})}>
+          <TouchableRipple onPress={()=>props.navigation.navigate('Payment',{amount:800,showModal:Update},)}>
             <View style={[styles.ROW, {alignItems:'center'}]}>
             <Rtext style={{color:'#fff'}}>Proceed</Rtext>
             <TouchableRipple  style={{paddingLeft:14}}>
@@ -130,7 +137,8 @@ function Cart(props){
       </View>
       </View>
       {/* End value end */}
-      <CompletePayment modalactivity={Update_State} modalVisiblity={first} text="Your Order is Confirmed" />
+      {show && <CompletePayment modalactivity={Update_State} modalVisiblity={show} text="Your Order is Confirmed" />}
+      {/* <CompletePayment modalactivity={Update_State} modalVisiblity={first} text="Your Order is Confirmed" /> */}
     </ScrollView>
   )
 }
