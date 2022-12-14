@@ -110,18 +110,23 @@ export const ProfileOptionList = [
     {
         name:"Cart",
         icon: require("../../assets/icons/cart1.png"),
-        path:"ManageAddress"
+        path:"Cart"
 
     },
     {
         name:"FAQ's",
-        icon: require("../../assets/icons/wpf_faq.png")
+        icon: require("../../assets/icons/wpf_faq.png"),
+        path:"FAQ"
 
     },
     {
         name:"Logout",
         icon: require("../../assets/icons/logout.png")
 
+    },
+    {
+        name:"Payment",
+        path:"Payment"
     },
 
 ];

@@ -34,6 +34,8 @@ import EditAddress from '../../Screens/main/EditAddress';
 import MyOrder from '../../Screens/main/MyOrder';
 import OrderTrack from '../../Screens/main/OrderTrack';
 import Cart from '../../Screens/main/Cart';
+import Payment from '../../Screens/main/Payment';
+import FAQ from '../../Screens/main/FAQ/index';
 
 const Stack = createNativeStackNavigator()
 
@@ -171,8 +173,26 @@ const StackNavigation = () => {
       />
 
 <Stack.Screen
+        name="Payment"
+        component={Payment}
+
+        options={{
+          // header: () => <HomeHeader />
+          // headerShown: false
+        }}
+      />
+<Stack.Screen
         name="Cart"
         component={Cart}
+
+        options={{
+          // header: () => <HomeHeader />
+          // headerShown: false
+        }}
+      />
+<Stack.Screen
+        name="FAQ"
+        component={FAQ}
 
         options={{
           // header: () => <HomeHeader />

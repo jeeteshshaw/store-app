@@ -1,4 +1,4 @@
-import { View,Dimensions,StyleSheet} from 'react-native'
+import { View,Dimensions,StyleSheet,Image} from 'react-native'
 import React from 'react'
 import { Rtext } from '../../../Components/Rtext';
 import { TouchableRipple } from 'react-native-paper';

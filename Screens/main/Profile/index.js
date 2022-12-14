@@ -32,7 +32,7 @@ const Profile = () => {
                         ItemSeparatorComponent={()=><View style={{height:normalizeSize(20)}} />}
                         renderItem={({item, index})=>(
                             <TouchableOpacity onPress={()=>{
-                                item.name==="Logout"? dispatch(LogoutSuccessfully()): navigation.navigate(item.path)
+                                item.name==="Logout"? dispatch(LogoutSuccessfully()): navigation.navigate(item.path,{modal:false})
                             }} style={Globalstyles.row_Between}>
                                 <View style={Globalstyles.row}>
                                     <View style={[{width:normalizeSize(30), height:normalizeSize(30), borderRadius:normalizeSize(15), backgroundColor:"#BAEE4D"}, Globalstyles.center]}>

@@ -19,7 +19,7 @@ export default function Payment(props) {
           <View style={{ paddingTop:20,paddingLeft:10}}>
             <Rtext fontWeight='400' fontSize={12} style={{width:normalizeSize(230), color:'#7C7B7B'}}>Please pay ₹765 to the delivery executive when your order is delivered</Rtext>
             <View style={{paddingTop:5, paddingBottom:normalizeSize(25), paddingTop:20}}>
-            <GButton press={()=>(props.navigation.navigate('Cart'))} style={{height:normalizeSize(24), width:normalizeSize(80),borderRadius:4,alignSelf:'flex-start'}} textStyle={{fontSize:13}} data="Place Order"/>
+            <GButton press={()=>(props.navigation.navigate('Cart',{modal:true}))} style={{height:normalizeSize(24), width:normalizeSize(80),borderRadius:4,alignSelf:'flex-start'}} textStyle={{fontSize:13}} data="Place Order"/>
             </View>
           </View>
         </View>

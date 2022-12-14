@@ -7,6 +7,7 @@ import { TouchableRipple } from 'react-native-paper';
 import { normalizeSize } from '../../../utility';
 import CompletePayment from '../../Popups/CompletePayment';
 import Globalstyles from '../../../Styles/GlobalStyle';
+import { useEffect } from 'react';
 
 const deviceWidth = Math.round(Dimensions.get('window').width);
 const deviceHeight = Math.round(Dimensions.get('window').height);
@@ -22,6 +23,8 @@ function Cart(props){
       setfirst(false);
     },5000);
   }
+  
+
   return (
     <ScrollView scrollEnabled={true}   style={{flex:1, backgroundColor:'#fff'}}>
       {/* Details Part */}
@@ -74,7 +77,7 @@ function Cart(props){
                     <Rtext fontSize={12}>₹85</Rtext>
               </View>
         </View>
-        <View style={Globalstyles.row_Between}>
+        <View style={[Globalstyles.row_Between,styles.Rcolor]}>
               <View style={Globalstyles.row}>
                     <Rtext fontSize={12} style={{paddingLeft:10}}>Lorem Ipsum MRP</Rtext>
               </View>
@@ -82,15 +85,15 @@ function Cart(props){
                     <Rtext fontSize={12}>₹700</Rtext>
               </View>
         </View>
-        <View style={Globalstyles.row_Between}>
+        <View style={[Globalstyles.row_Between,styles.Rcolor]}>
               <View style={Globalstyles.row}>
                     <Rtext fontSize={12} style={{paddingLeft:10}}>Product Discount</Rtext>
               </View>
-              <View style={{paddingRight:normalizeSize(70)}}>
+              <View style={{paddingRight:normalizeSize(67)}}>
                     <Rtext fontSize={12}>- ₹15</Rtext>
               </View>
         </View>
-        <View style={Globalstyles.row_Between}>
+        <View style={[Globalstyles.row_Between,styles.Rcolor]}>
               <View style={Globalstyles.row}>
                     <Rtext fontSize={12} style={{paddingLeft:10}}>Delivery charges</Rtext>
               </View>
@@ -98,7 +101,7 @@ function Cart(props){
                     <Rtext fontSize={12}>₹15 FREE</Rtext>
               </View>
         </View>
-        <View style={Globalstyles.row_Between}>
+        <View style={[Globalstyles.row_Between,styles.Rcolor]}>
               <View style={Globalstyles.row}>
                     <Rtext fontSize={12} style={{paddingLeft:10}}>Grand Total</Rtext>
               </View>
@@ -112,10 +115,10 @@ function Cart(props){
           <View>
             <Rtext style={{color:'white'}}>2 items :  <Text style={{color:'white',textDecorationLine:'line-through'}}>₹780</Text>    ₹765</Rtext>
           </View>
-          <TouchableRipple>
+          <TouchableRipple onPress={()=>props.navigation.navigate('Payment',{amount:800})}>
             <View style={[styles.ROW, {alignItems:'center'}]}>
             <Rtext style={{color:'#fff'}}>Proceed</Rtext>
-            <TouchableRipple onPress={Update_State} style={{paddingLeft:14}}>
+            <TouchableRipple  style={{paddingLeft:14}}>
             <Image source={require('../../../assets/images/white_right_arrow.png')} style={{resizeMode:'contain',height:12,width:12}}/>
             </TouchableRipple>
             </View>
