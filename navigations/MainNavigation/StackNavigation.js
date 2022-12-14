@@ -34,6 +34,7 @@ import EditAddress from '../../Screens/main/EditAddress';
 import MyOrder from '../../Screens/main/MyOrder';
 import OrderTrack from '../../Screens/main/OrderTrack';
 import Cart from '../../Screens/main/Cart';
+import OrderTrack2 from '../../Screens/main/OrderTrack2';
 import Payment from '../../Screens/main/Payment';
 import FAQ from '../../Screens/main/FAQ/index';
 
@@ -105,6 +106,16 @@ const StackNavigation = () => {
        <Stack.Screen
         name="OrderTrack"
         component={OrderTrack}
+
+        options={{
+          title:"Order Track"
+          // header: () => <HomeHeader />
+          // headerShown: false
+        }}
+      />
+       <Stack.Screen
+        name="OrderTrack2"
+        component={OrderTrack2}
 
         options={{
           title:"Order Track"

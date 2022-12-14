@@ -33,14 +33,27 @@ const thirdIndicatorStyles = {
 };
 
 
-const OrderTrack = () => {
-  
+const OrderTrack2 = () => {
   return (
     <View style={[Styles.globalContainer,{backgroundColor:"#fff"},GS.container]}>
-      <View style={{flex:0.8, transform:[{translateY:-SCREEN_HEIGHT*0.1}]}}>
-
-      <StepIndicator
-          stepCount={3}
+        <ScrollView>
+          <Rtext fontSize={12} style={{color:"#A7A7A7"}}>Order ID - OD54811154</Rtext>
+          <View style={{marginVertical:20, alignItems:"center"}}>
+            <Image source={require("../../../assets/images/OrderTrack.png")} style={{width:"90%",height:normalizeSize(210), resizeMode:"contain"}} />
+          </View>
+          <Rtext fontWeight='700' fontSize={16}>
+            Ladies' Finger
+          </Rtext>
+          <Rtext style={{marginTop:4}}  fontSize={12}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          </Rtext>
+          <View style={[{marginTop:10},GS.row]}>
+            <Rtext style={{textDecorationLine:"line-through",color:"#8C8C8C"}} fontSize={13}> ₹500</Rtext>
+            <Rtext style={{marginLeft:16}} fontSize={13}> ₹250</Rtext>
+          </View>
+          <View style={{height:normalizeSize(200)}}>
+          <StepIndicator
+          stepCount={2}
 
           customStyles={thirdIndicatorStyles}
           currentPosition={2}
@@ -48,39 +61,29 @@ const OrderTrack = () => {
           // onPress={onStepPress}
         
           renderLabel={({position,label})=>(
-            <View style={{ marginTop:  position<1 ?normalizeSize(16*6):normalizeSize(16*2)}}>
-              {console.log({position})}
-              <Rtext fontWeight='600' fontSize={15} >{label} <Rtext style={{color:"#838282", transform:[{translateY:4}]}} fontSize={12}>Sunday, Oct 16, 2022</Rtext></Rtext>
+            <View style={{ marginTop:  normalizeSize(16*1)}}>
+              <Rtext fontWeight='600' fontSize={15} >{label}</Rtext>
               
                   <View style={{marginLeft:8}}>
                     <View style={{marginTop:4}}>
-                      <Rtext fontSize={12}>Your order has been placed.</Rtext>
-                      <Rtext fontSize={12} style={{color:"#7A7A7A"}}>Sunday, Oct 16, 2022 - 2:19pm</Rtext>
+                      {/* <Rtext fontSize={12}>Your order has been placed.</Rtext> */}
+                      <Rtext fontSize={12} >Sunday, Oct 16, 2022 - 2:19pm</Rtext>
                     </View>
-              {
-                position<1 && (
-                  <>
-                    <View style={{marginTop:4}}>
-                      <Rtext fontSize={12}>Your order has been placed.</Rtext>
-                      <Rtext fontSize={12} style={{color:"#7A7A7A"}}>Sunday, Oct 16, 2022 - 2:19pm</Rtext>
-                    </View>
-                    <View style={{marginTop:4}}>
-                      <Rtext fontSize={12}>Your order has been placed.</Rtext>
-                      <Rtext fontSize={12} style={{color:"#7A7A7A"}}>Sunday, Oct 16, 2022 - 2:19pm</Rtext>
-                    </View>
-                  </>
-                  )
-                }
+                    
+                    
                   </View>
+                
             </View>
           )}
-          labels={['Order Confirmed', 'Out For Delivery', 'Delivered']}
+          labels={['Order Confirmed', 'Delivered']}
         />
-      </View>
+          </View>
+        </ScrollView>
     </View>
   )
+ 
 }
 
-export default OrderTrack
+export default OrderTrack2
 
 const styles = StyleSheet.create({})

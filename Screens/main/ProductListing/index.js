@@ -1,5 +1,5 @@
 import { FlatList, Image, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Styles from '../../../Styles'
 import GS from '../../../Styles/GlobalStyle'
 import { normalizeSize, SCREEN_HEIGHT, SCREEN_WIDTH } from '../../../utility'
@@ -10,11 +10,20 @@ import { ThemeDarkGreen } from '../../../config/Colors'
 import AddToCart from '../../Popups/AddToCart'
 import { useNavigation } from '@react-navigation/native'
 import ProductCard1 from '../../../Components/ProductCard1'
+import { useDispatch, useSelector } from 'react-redux'
+import { setCart } from '../../../store/common'
 
 const rightHalf = SCREEN_WIDTH - normalizeSize(100)
 
 const ProductListing = () => {
   const navigation = useNavigation()
+  const cartOptionShow = useSelector(state=> state.common.cart)
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(setCart(false));
+
+  }, [])
+  
   return (
     <View style={GS.container}>
       <View style={GS.row}>
@@ -40,7 +49,12 @@ const ProductListing = () => {
           </View>
         </View>
       </View>
-      {/* <AddToCart /> */}
+      {
+        cartOptionShow && (
+
+          <AddToCart />
+        )
+      }
     </View>
   )
 }
