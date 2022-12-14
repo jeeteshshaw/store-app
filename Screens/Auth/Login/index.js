@@ -24,7 +24,7 @@ const Login=(props)=>{
                     </Text>    
                 </View>
                 <View>
-                    <GButton data={"Continue"}  press={()=>navigation.navigate('Payment',{amount:800})}/>
+                    <GButton data={"Continue"}  press={()=>(console.log("Button Pressed"))}/>
                     {/* <GButton data={"Continue"}  press={()=>console.log("pressed")}/> */}
                     <Text onPress={()=>(props.navigation.navigate('Enter_Email'))} style={Login_style.foreget_text}>
                         Forget Password

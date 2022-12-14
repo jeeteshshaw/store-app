@@ -9,6 +9,7 @@ export default useFonts = async () =>
     "K2D-Light": require('../../assets/fonts/K2D-Light.ttf'),
     "K2D-Medium": require('../../assets/fonts/K2D-Medium.ttf'),
     "K2D-Thin": require('../../assets/fonts/K2D-Thin.ttf'),
+    "K2D-300": require('../../assets/fonts/K2D-Thin.ttf'),
     "K2D-SemiBold": require('../../assets/fonts/K2D-SemiBold.ttf'),
     // "Inter-900": require('../../assets/fonts/Inter-900.ttf'),
     // "Inter-Bold": require('../../assets/fonts/Inter-600.ttf'),
