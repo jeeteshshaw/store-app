@@ -1,4 +1,4 @@
-import {View, ImageBackground, Text,StyleSheet,ScrollView,KeyboardAvoidingView,SafeAreaView, StatusBar } from 'react-native';
+import {View, ImageBackground, Text,StyleSheet,ScrollView,KeyboardAvoidingView,SafeAreaView, StatusBar, TouchableOpacity } from 'react-native';
 import { TouchableRipple } from 'react-native-paper';
 import { useDispatch } from 'react-redux';
 import { LoginSuccessfully } from '../../store/auth';
@@ -32,15 +32,21 @@ function Entry(Component){
                             </Text>
                         </View>
                             <View style={Entry_style.container_log}>
-                                <Text  onPress={()=>(props.navigation.navigate('Login'))} style={[Entry_style.text_Log]}>
+                                <TouchableOpacity onPress={()=>(props.navigation.navigate('Login'))}>
+                                    
+                                <Text style={[Entry_style.text_Log,{textDecorationLine:"underline"}]}>
                                     Login 
                                 </Text>
+                                </TouchableOpacity>
+
                                 <Text style={[Entry_style.text_Log]}>
                                     or 
                                 </Text>
-                                <Text onPress={()=>(props.navigation.navigate('Signup'))} style={[Entry_style.text_Log]}>
+                                <TouchableOpacity onPress={()=>(props.navigation.navigate('Signup'))}>
+                                <Text  style={[Entry_style.text_Log,{textDecorationLine:"underline"} ]}>
                                     Signup
                                 </Text>
+                                </TouchableOpacity>
                             </View>
                     </View>
                     <View style={{flex:1, minHeight:SCREEN_HEIGHT*0.35}}>

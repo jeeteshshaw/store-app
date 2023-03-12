@@ -7,7 +7,7 @@ import {
   PermissionsAndroid,
   Alert,
 } from 'react-native';
-// import {showMessage} from 'react-native-flash-message';
+import {showMessage} from 'react-native-flash-message';
 // // import RNFetchBlob from 'rn-fetch-blob';
 // // import {RNS3} from 'react-native-upload-aws-s3';
 // // import Toast from 'react-native-simple-toast';
@@ -209,48 +209,38 @@ export const normalizeSize = (size, lgSize = 0, smSize = 0) => {
 //   return s[0].toUpperCase() + s.slice(1).toLowerCase();
 // };
 
-// export const fieldToLebel = field => {
-//   field = field.replace(/_/g, ' ');
-//   field = field.toUpperCase();
-//   return field;
-// };
+export const fieldToLebel = field => {
+  field = field.replace(/_/g, ' ');
+  field = field.toUpperCase();
+  return field;
+};
 
-// export const showServerValidationError = response => {
-//   let errorMessage = '';
-//   for (const [key, value] of Object.entries(response)) {
-//     errorMessage += '* ' + fieldToLebel(key) + ' ' + value + '\n';
-//   }
-//   errorMessage = errorMessage.replace(/\n+$/, '');
+export const showYupValidationError = response => {
+  let errorMessage = '';
+  for (const [key, value] of Object.entries(response)) {
+    errorMessage += '* ' + fieldToLebel(key) + ' ' + value + '\n';
+  }
+  errorMessage = errorMessage.replace(/\n+$/, '');
 
-//   showFlashMessage(errorMessage, '', 'danger');
-// };
+  showFlashMessage(errorMessage, '', 'danger');
+};
 
-// export const showYupFormValidationError = errors => {
-//   console.log(errors);
 
-//   let errorMessage = '';
-//   for (const [key, value] of Object.entries(errors)) {
-//     errorMessage += '* ' + value.message + '\n';
-//   }
-//   errorMessage = errorMessage.replace(/\n+$/, '');
-//   if (errorMessage != '') showFlashMessage(errorMessage, '', 'danger');
-// };
-
-// export const showFlashMessage = (
-//   message = '',
-//   description = '',
-//   type = 'success',
-//   onPress = () => {},
-//   duration = 2000,
-// ) => {
-//   showMessage({
-//     message: message,
-//     description: description,
-//     type: type,
-//     onPress,
-//     duration,
-//   });
-// };
+export const showFlashMessage = (
+  message = '',
+  description = '',
+  type = 'success',
+  onPress = () => {},
+  duration = 2000,
+) => {
+  showMessage({
+    message: message,
+    description: description,
+    type: type,
+    onPress,
+    duration,
+  });
+};
 
 // // export const getTodayDate = format => {
 // //   try {
@@ -283,93 +273,4 @@ export const normalizeSize = (size, lgSize = 0, smSize = 0) => {
 //   // it will be called when user loged out;
 //   Meteor.logout();
 //   store.dispatch(logout());
-// };
-
-// export const uploadToS3 = async (uri, name, type) => {
-//   // upload images to S3
-//   console.log('logggggggg', uri, name, type);
-//   const file = {
-//     uri: uri,
-//     name: name,
-//     type: type,
-//   };
-
-//   const options = {
-//     keyPrefix: 'sanro/temp/',
-//     bucket: 'dev-idiosys',
-//     region: 'ap-southeast-1',
-//     accessKey: 'AKIAZUGVFQTWKRIXZGEM',
-//     secretKey: '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',
-//     successActionStatus: 201,
-//   };
-
-//   try {
-//     const response = await RNS3.put(file, options);
-//     console.log('response', response);
-//     return response;
-//   } catch (error) {
-//     console.log('error', error);
-//   }
-
-//   // const dirs = RNFetchBlob.fs.dirs;
-//   const dirToSave = Platform.OS == 'ios' ? dirs.DocumentDir : dirs.DownloadDir;
-//   console.log('>>>>', document_file);
-
-//   const configfb = {
-//     fileCache: true,
-//     useDownloadManager: true,
-//     notification: true,
-//     mediaScannable: true,
-//     title: `${document_file}`,
-//     path: `${dirToSave}/${document_file}`,
-//   };
-//   const configOptions = Platform.select({
-//     ios: {
-//       fileCache: configfb.fileCache,
-//       title: configfb.title,
-//       path: configfb.path,
-//       appendExt: `${document_file.split('.')[1]}`,
-//     },
-//     android: configfb,
-//   });
-
-//   console.log(`${hr_doc_Url + document_file}`);
-
-//   // RNFetchBlob.config(configOptions)
-//   //   // .fetch('GET', `${hr_doc_Url + document_file}`, {})
-//   //   .fetch('GET', `${hr_doc_Url}`, {})
-
-//   //   .then(res => {
-//   //     if (Platform.OS === 'ios') {
-//   //       RNFetchBlob.fs.writeFile(configfb.path, res.data, 'base64');
-//   //       RNFetchBlob.ios.previewDocument(configfb.path);
-//   //     }
-//   //     // setisdownloaded(false);
-//   //     if (Platform.OS == 'android') {
-//   //       showFlashMessage(`File downloaded successfully..`, '', 'success');
-//   //       console.log(res);
-//   //     }
-
-//   //     // console.log('The file saved to ', res.data);
-//   //     // console.log('The file saved to ', res.respInfo.headers['Content-Type']);
-     
-//   //   })
-//   //   .catch(e => {
-//   //     // setisdownloaded(true);
-//   //     // showSnackbar(e.message);
-//   //     showFlashMessage(e.message, '', 'danger');
-//   //     // console.log('The file saved to ERROR', e.message);
-//   //   });
-   
-// };
-
-// export const meteorAsyncCall = (...params) => {
-//   const myPromise = new Promise((resolve, reject) => {
-//     Meteor.call(...params, async (err, res) => {
-//       if (err) reject(err);
-//       else resolve(res);
-//     });
-//   });
-
-//   return myPromise;
 // };

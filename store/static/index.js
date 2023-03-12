@@ -124,10 +124,10 @@ export const ProfileOptionList = [
         icon: require("../../assets/icons/logout.png")
 
     },
-    {
-        name:"Payment",
-        path:"Payment"
-    },
+    // {
+    //     name:"Payment",
+    //     path:"Payment"
+    // },
 
 ];
 export const List = [
