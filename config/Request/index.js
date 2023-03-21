@@ -1,15 +1,14 @@
-// import * as config from '../config';
+
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import { baseUrl } from '../Constants';
 // import store from '../../store';
 // import {LogoutSuccessfully} from '../../store/auth';
-// import { useSelector , useDispatch} from 'react-redux';
 // import { RootState } from '../store';
-// let baseuri = baseUrl;
+
 export const Request = async (method, url, data = {}, formData = false) => {
-  console.log('url', baseuri + url +" "+ formData);
-  // const token = useSelector((state: RootState) => state.auth.token);
+  console.log('url', baseUrl + url +" "+ formData);
+  
   let headerObj = {
     'Content-Type': 'application/json',
     Accept: 'application/json',
@@ -26,7 +25,7 @@ export const Request = async (method, url, data = {}, formData = false) => {
   }
   // console.log({headerObj});
   let instance = axios.create({
-    baseURL: baseuri,
+    baseURL: baseUrl,
     timeout: 8000,
     headers: headerObj,
     validateStatus: status => {
@@ -51,21 +50,7 @@ export const Request = async (method, url, data = {}, formData = false) => {
   } else if (method === 'delete') {
     base = instance.delete(url,data);
   } else if (method === 'upload') {
-    // base = RNFetchBlob.fetch(
-    //   'POST',
-    //   config.baseUrl + url,
-    //   headerObj,
-    // [
-    //   {
-    //     name: 'dash_image',
-    //     filename: "profile"
-    //     ,
-    //     "type": data['mime'],
-    //     data: RNFetchBlob.wrap(data['path'])
-    //   }, { name: 'dash_id', data: String(data["id"]) },]
-    // );
 
-    // base = RNFetchBlob.fetch('POST', baseuri + url, headerObj, data);
   } else base = instance.get(url, {params: data});
 
   return base;

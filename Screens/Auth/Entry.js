@@ -10,7 +10,7 @@ function Entry(Component){
         const dispatch = useDispatch();
     
     return (
-        // <SafeAreaView style={{flex:1}}>
+        <SafeAreaView style={{flex:1}}>
         <View style={Entry_style.container}>
             <ScrollView style={{minHeight:SCREEN_HEIGHT-StatusBar.currentHeight,backgroundColor:'#9FCC3A'}}>
             <View style={[Entry_style.semi_container,{backgroundColor:'#A7A7A7'}]}>
@@ -49,7 +49,7 @@ function Entry(Component){
                                 </TouchableOpacity>
                             </View>
                     </View>
-                    <View style={{flex:1, minHeight:SCREEN_HEIGHT*0.35}}>
+                    <View style={{minHeight:SCREEN_HEIGHT*0.35}}>
                     <Component {...props}/>    
                     </View>
                     <View style={{paddingVertical:16}}>
@@ -64,7 +64,7 @@ function Entry(Component){
             </View>
         </ScrollView>
     </View>
-    // </SafeAreaView>
+   </SafeAreaView>
     )}
 }
 export default Entry;

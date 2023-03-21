@@ -3,4 +3,4 @@ export const Green = '#69BE61';
 export const Red = '#ec646d';
 export const Yellow = '#FABD02';
 
-export const baseUrl = "https://apidevelopment.hari-bhari.com/";
+export const baseUrl = "https://apidevelopment.hari-bhari.com";
