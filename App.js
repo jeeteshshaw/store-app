@@ -23,7 +23,7 @@ export default function App() {
     await fontLoad()
     return true
   }
-
+  
   if (!IsReady) {
     return ( 
       <AppLoading

@@ -11,6 +11,7 @@ import { LogoutSuccessfully } from '../../../store/auth'
 import { useDispatch } from 'react-redux'
 import { useNavigation } from '@react-navigation/native'
 import NoResultFound from '../../Popups/NoResultFound'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const Profile = () => {
     const dispatch = useDispatch();
@@ -35,7 +36,7 @@ const Profile = () => {
                         ItemSeparatorComponent={()=><View style={{height:normalizeSize(20)}} />}
                         renderItem={({item, index})=>(
                             <TouchableOpacity onPress={()=>{
-                                item.name==="Logout"? dispatch(LogoutSuccessfully()): navigation.navigate(item.path,{modal:false})
+                                item.name==="Logout"? (dispatch(LogoutSuccessfully()), AsyncStorage.removeItem("@token")): navigation.navigate(item.path,{modal:false})
                             }} style={Globalstyles.row_Between}>
                                 <View style={Globalstyles.row}>
                                     <View style={[{width:normalizeSize(30), height:normalizeSize(30), borderRadius:normalizeSize(15), backgroundColor:"#BAEE4D"}, Globalstyles.center]}>
