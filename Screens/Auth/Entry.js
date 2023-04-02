@@ -10,10 +10,11 @@ function Entry(Component){
         const dispatch = useDispatch();
     
     return (
-        <SafeAreaView style={{flex:1}}>
-        <View style={Entry_style.container}>
-            <ScrollView style={{minHeight:SCREEN_HEIGHT-StatusBar.currentHeight,backgroundColor:'#9FCC3A'}}>
-            <View style={[Entry_style.semi_container,{backgroundColor:'#A7A7A7'}]}>
+
+   
+        <ScrollView style={Entry_style.container}>
+            <View style={{minHeight:SCREEN_HEIGHT-StatusBar.currentHeight,backgroundColor:'#9FCC3A'}}>
+          <View style={[Entry_style.semi_container,{backgroundColor:'#A7A7A7'}]}>
                 <ImageBackground source={require('../../assets/images/mp_1.png')} resizeMode="cover" style={{flex:1,width:'100%',height:'100%'}}>
                     <TouchableRipple onPress={()=>{
                         console.log("login");
@@ -62,9 +63,8 @@ function Entry(Component){
                     </View>
                 </View>
             </View>
-        </ScrollView>
     </View>
-   </SafeAreaView>
+     </ScrollView>
     )}
 }
 export default Entry;
@@ -72,6 +72,7 @@ export default Entry;
 const Entry_style = StyleSheet.create({
     container:{
         flex:1,
+        backgroundColor:'black',
     },
     semi_container:{
     height:SCREEN_HEIGHT*0.45
