@@ -1,5 +1,5 @@
 import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { ScrollView } from 'react-native-virtualized-view'
 import { Rtext } from '../../../Components/Rtext'
 import Styles from '../../../Styles'
@@ -10,20 +10,24 @@ import { ThemeLightGreen } from '../../../config/Colors'
 import { LogoutSuccessfully } from '../../../store/auth'
 import { useDispatch } from 'react-redux'
 import { useNavigation } from '@react-navigation/native'
+import NoResultFound from '../../Popups/NoResultFound'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const Profile = () => {
     const dispatch = useDispatch();
     const navigation = useNavigation();
+    const [ShowNoResultFound, setShowNoResultFound] = useState(false)
   return (
     <View style={[Globalstyles.container, {backgroundColor:"#fff"}]}>
       <ScrollView>
         <View style={[Styles.globalContainer]}>
             <Rtext fontWeight='700'>My Account</Rtext>
             <Rtext style={{color:"#747474"}}>Subhrajeet Roy Chowdhury</Rtext>
-            <View style={{marginTop:16}}>
+            <TouchableOpacity onPress={()=>setShowNoResultFound(true)} style={{marginTop:16}}>
                 <Image source={require("../../../assets/images/profileImg.png")} style={{width:"100%", height:normalizeSize(85), resizeMode:"contain"}} />
 
-            </View>
+            </TouchableOpacity>
+            <NoResultFound modalVisiblity={ShowNoResultFound} onClose={()=>setShowNoResultFound(false)}   />
             <View style={{marginTop:16}}>
                 <Rtext style={{color:"#747474"}}>Your Informatiom</Rtext>
                 <View style={{marginVertical:20}}>
@@ -32,7 +36,7 @@ const Profile = () => {
                         ItemSeparatorComponent={()=><View style={{height:normalizeSize(20)}} />}
                         renderItem={({item, index})=>(
                             <TouchableOpacity onPress={()=>{
-                                item.name==="Logout"? dispatch(LogoutSuccessfully()): navigation.navigate(item.path,{modal:false})
+                                item.name==="Logout"? (dispatch(LogoutSuccessfully()), AsyncStorage.removeItem("@token")): navigation.navigate(item.path,{modal:false})
                             }} style={Globalstyles.row_Between}>
                                 <View style={Globalstyles.row}>
                                     <View style={[{width:normalizeSize(30), height:normalizeSize(30), borderRadius:normalizeSize(15), backgroundColor:"#BAEE4D"}, Globalstyles.center]}>

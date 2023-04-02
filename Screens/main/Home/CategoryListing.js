@@ -1,21 +1,34 @@
 import { FlatList, Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React, { useCallback } from 'react'
-import { CategoryList } from '../../../store/static'
+import React, { useCallback, useEffect, useState } from 'react'
+import { CategoryList as CategoryListSample } from '../../../store/static'
 import { normalizeSize, SCREEN_WIDTH } from '../../../utility'
 import { Rtext } from '../../../Components/Rtext'
 import { ThemeLightGreen } from '../../../config/Colors'
 import Styles from '../../../Styles'
 import GS from '../../../Styles/GlobalStyle'
 import { useNavigation } from '@react-navigation/native'
+import { Request } from '../../../config/Request'
+import { baseUrl } from '../../../config/Constants'
 
 const CategoryListing = () => {
     const navigation = useNavigation();
-    const onSelectCategory = useCallback(
-      () => {
-        return navigation.navigate("ProductListing")
-      },
-      [],
-    )
+    const [CategoryList, setCategoryList] = useState([])
+    const onSelectCategory = (item) => {
+        return navigation.navigate("ProductListing",{item})
+    }
+    const getCategorysData = async () => {
+        try {
+            const categories = await Request("get","Category");
+            console.log({categories:categories.data.info});
+            setCategoryList(categories.data.info);
+        } catch (error) {
+            
+        }
+    }
+
+    useEffect(() => {
+        getCategorysData()
+    }, [])
     
     return (
         <ImageBackground style={styles.container} source={require("../../../assets/images/linear_gradient_light_green_bg.png")} resizeMode="cover">
@@ -40,9 +53,9 @@ export default CategoryListing;
 
 const RenderItemCard = React.memo(({ item, index,onPress }) => (
 
-    <TouchableOpacity onPress={onPress} style={[styles.cardContainer, GS.center]}>
-        <Image source={item.image} style={styles.cardImg} />
-        <Rtext fontSize={11} style={styles.cardText} numberOfLines={3}>{item.title}</Rtext>
+    <TouchableOpacity onPress={()=>onPress(item)} style={[styles.cardContainer, GS.center]}>
+        <Image source={{uri:baseUrl+"/"+item.image}} style={styles.cardImg} />
+        <Rtext fontSize={11} style={styles.cardText} numberOfLines={3}>{item.name}</Rtext>
     </TouchableOpacity>
 ));
 

@@ -1,3 +1,4 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { createSlice } from "@reduxjs/toolkit";
 
 
@@ -8,9 +9,10 @@ const slice = createSlice({
         token:""
     },
     reducers:{
-        LoginSuccessfully:(state)=>{
+        LoginSuccessfully:(state,{payload})=>{
             console.log("LoginSuccessfully");
-            state.token = "1234567890"
+            state.token = payload.token;
+            // AsyncStorage.setItem("@token",payload.token);
         },
         LogoutSuccessfully:(state)=>{
             state.token = ""

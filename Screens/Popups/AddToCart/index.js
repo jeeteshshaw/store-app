@@ -12,7 +12,7 @@ const AddToCart = () => {
             <View style={{height:normalizeSize(50), width:"100%", margin:8, backgroundColor:"#77A615", borderRadius:10}}>
                 <View style={[{flex:1, paddingHorizontal:16}, GS.row_Between]}>
                     <View>
-                    <Rtext style={{color:"#fff"}} fontSize={12}>1 iteam</Rtext>
+                    <Rtext style={{color:"#fff"}} fontSize={12}>1 item</Rtext>
                     <Rtext style={{color:"#fff"}} fontSize={12}>₹20</Rtext>
                     
                     </View>

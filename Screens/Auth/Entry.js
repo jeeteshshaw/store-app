@@ -1,4 +1,4 @@
-import {View, ImageBackground, Text,StyleSheet,ScrollView,KeyboardAvoidingView,SafeAreaView, StatusBar } from 'react-native';
+import {View, ImageBackground, Text,StyleSheet,ScrollView,KeyboardAvoidingView,SafeAreaView, StatusBar, TouchableOpacity } from 'react-native';
 import { TouchableRipple } from 'react-native-paper';
 import { useDispatch } from 'react-redux';
 import { LoginSuccessfully } from '../../store/auth';
@@ -10,10 +10,11 @@ function Entry(Component){
         const dispatch = useDispatch();
     
     return (
-        // <SafeAreaView style={{flex:1}}>
+
+   
         <ScrollView style={Entry_style.container}>
             <View style={{minHeight:SCREEN_HEIGHT-StatusBar.currentHeight,backgroundColor:'#9FCC3A'}}>
-            <View style={[Entry_style.semi_container,{backgroundColor:'#A7A7A7'}]}>
+          <View style={[Entry_style.semi_container,{backgroundColor:'#A7A7A7'}]}>
                 <ImageBackground source={require('../../assets/images/mp_1.png')} resizeMode="cover" style={{flex:1,width:'100%',height:'100%'}}>
                     <TouchableRipple onPress={()=>{
                         console.log("login");
@@ -32,18 +33,24 @@ function Entry(Component){
                             </Text>
                         </View>
                             <View style={Entry_style.container_log}>
-                                <Text  onPress={()=>(props.navigation.navigate('Login'))} style={[Entry_style.text_Log]}>
+                                <TouchableOpacity onPress={()=>(props.navigation.navigate('Login'))}>
+                                    
+                                <Text style={[Entry_style.text_Log,{textDecorationLine:"underline"}]}>
                                     Login 
                                 </Text>
+                                </TouchableOpacity>
+
                                 <Text style={[Entry_style.text_Log]}>
                                     or 
                                 </Text>
-                                <Text onPress={()=>(props.navigation.navigate('Signup'))} style={[Entry_style.text_Log]}>
+                                <TouchableOpacity onPress={()=>(props.navigation.navigate('Signup'))}>
+                                <Text  style={[Entry_style.text_Log,{textDecorationLine:"underline"} ]}>
                                     Signup
                                 </Text>
+                                </TouchableOpacity>
                             </View>
                     </View>
-                    <View style={{flex:1, minHeight:SCREEN_HEIGHT*0.35}}>
+                    <View style={{minHeight:SCREEN_HEIGHT*0.35}}>
                     <Component {...props}/>    
                     </View>
                     <View style={{paddingVertical:16}}>
@@ -57,8 +64,7 @@ function Entry(Component){
                 </View>
             </View>
     </View>
-        </ScrollView>
-    // </SafeAreaView>
+     </ScrollView>
     )}
 }
 export default Entry;

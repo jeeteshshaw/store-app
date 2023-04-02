@@ -15,6 +15,7 @@ import { useLayoutEffect, useState } from 'react';
 import useFonts from './utility/FontLoad/index'
 import { MenuProvider } from 'react-native-popup-menu';
 import AppLoading from 'expo-app-loading';
+import FlashMessage from 'react-native-flash-message';
 
 export default function App() {
   const [IsReady, setIsReady] = useState(false)  
@@ -22,7 +23,7 @@ export default function App() {
     await fontLoad()
     return true
   }
-
+  
   if (!IsReady) {
     return ( 
       <AppLoading
@@ -39,7 +40,7 @@ export default function App() {
           <PaperProvider>
             <MenuProvider>
               <NavigatorHandler />
-              
+              <FlashMessage position="top" />
             </MenuProvider>
 
           </PaperProvider>

@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
       backgroundColor: "white",
       borderRadius: 20,
       shadowColor: "#000",
-      height:'40%',
+      height:normalizeSize(275),
       width:'90%',
       shadowOffset: {
         width: 0,
