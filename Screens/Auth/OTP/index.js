@@ -12,8 +12,14 @@ import { Request } from '../../../config/Request';
 const submitSignupVerify = (data, user_id)=> {
     return Request("put", "/auth/verifyotp/"+user_id, data);
   }
+
+const submitResetVerify = (data, user_id)=> {
+    console.log(data);
+    return Request("post", "/auth/resetpasswordotp/"+user_id, data);
+}
   
    
+  
 function OTP(props) {
     const [modalactivity, setModalActivity] = useState(false)
     const [OtpText, setOtpText] = useState("");
@@ -33,17 +39,41 @@ function OTP(props) {
             otp:OtpText
           }, route.params.user_id);
           console.log(res.data);
-        //   props.navigation.navigate('OTP',{isSignUp:true, user_id: res.data.info.user_id});
+          props.navigation.navigate('OTP',{isSignUp:true, user_id: res.data.info.user_id});
         setModalActivity(true)
         setTimeout(() => {
-            UpdatingState()
-            
+            UpdatingState() 
         }, 3000);
         } catch (error) {
           console.log(error.response.data);
           showFlashMessage(error.response.data.errors.error,"", "danger");
         }
       }
+
+
+      const _ResetOtpVerify = async () => {
+        // console.log(data);
+        if(OtpText.length!==6){
+            return false;
+        }
+        try {
+          const res = await submitResetVerify({
+            otp:+OtpText
+          }, route.params.user_id);
+          console.log(res.data);
+        //   props.navigation.navigate('OTP',{isSignUp:false, user_id: res.data.info.user_id});
+        // setTimeout(() => {
+        //     UpdatingState() 
+        // }, 3000);
+        } catch (er) {
+          console.log(er.response);
+          // showFlashMessage(er.response.data,"", "danger");
+        }
+      }
+
+
+
+
     if (props.route.params.isSignUp) {
         return (
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -69,8 +99,10 @@ function OTP(props) {
                 <GInput
                     placeholder={'OTP'}
                     keyboardtype={'numeric'}
+                    onChange={setOtpText} 
+                    maxLength={6}
                 />
-                <GButton style={{ marginTop: 20 }} data={'Continue'} press={() => (props.navigation.navigate('Reset'))} />
+                <GButton style={{ marginTop: 20 }} data={'Continue'} press={_ResetOtpVerify} />
             </View>
         )
 
