@@ -12,7 +12,6 @@ const slice = createSlice({
         LoginSuccessfully:(state,{payload})=>{
             console.log("LoginSuccessfully");
             state.token = payload.token;
-            // AsyncStorage.setItem("@token",payload.token);
         },
         LogoutSuccessfully:(state)=>{
             state.token = ""

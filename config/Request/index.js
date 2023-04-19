@@ -19,9 +19,9 @@ export const Request = async (method, url, data = {}, formData = false) => {
 
   //
   const token = await AsyncStorage.getItem("@token")
-  // console.log('tttttttttttttttttttttttttttttttt', data);
+  console.log('tttttttttttttttttttttttttttttttt', token);
   if (token) {
-    headerObj['authorization'] =   token;
+    headerObj['authorization'] =  "Bearer "+ token;
   }
   // console.log({headerObj});
   let instance = axios.create({

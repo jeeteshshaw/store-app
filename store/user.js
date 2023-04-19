@@ -1,20 +1,17 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import RevGeolocation from "../utility/RevGeolocation";
+
+import { Request } from "../config/Request";
 
 
-export const getUserLocation = createAsyncThunk(
-    "user/getUserLocation",
-    async({lat,lng},{rejectWithValue})=>{
-        // console.log("getUserLocation");
+export const getUserProfile = createAsyncThunk(
+    "user/getUserProfile",
+    async(_,{rejectWithValue})=>{
+        // console.log("getUserProfile");
         try {
-            const res = await RevGeolocation(lat, lng);
-            // console.log("getUserLocation fulfilled",res.results[0]);
-            console.log("getUserLocation fulfilled");
-
-            return res.results[0]
-            
+            const res = await Request("get","/auth/viewprofile")
+            return res.data.info
         } catch (error) {
-            console.log("user/getUserLocation",{error});
+            console.log("user/getUserProfile",error.response.data);
             rejectWithValue(JSON.stringify(error))
         }
 
@@ -26,34 +23,23 @@ export const getUserLocation = createAsyncThunk(
 const slice = createSlice({
     name:"user",
     initialState:{
-        location:{},
-        language:"",
-        geolocation:{},
-        loading:false
-
+        loading:false,
+        userInfo:null
     },
     reducers:{
-        LoginSuccessfully:(state)=>{
-            state.token = "1234567890"
-        },
-        LogOutSuccessfully:(state)=>{
-            state.token = ""
-        },
-        setGeolocation:(state,{payload})=>{
-            state.geolocation = payload
-        },
+      
     },
     extraReducers:{
-        [getUserLocation.pending]:(state)=>{
+        [getUserProfile.pending]:(state)=>{
             state.loading=true;
         },
-        [getUserLocation.fulfilled]:(state,{payload})=>{
+        [getUserProfile.fulfilled]:(state,{payload})=>{
             state.loading=false;
-            state.location=payload;
+            state.userInfo=payload;
         }
     }
 });
 
-export const {LoginSuccessfully,setGeolocation,LogOutSuccessfully} = slice.actions;
+export const {} = slice.actions;
 
 export default slice.reducer;

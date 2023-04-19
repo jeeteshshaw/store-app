@@ -3,12 +3,12 @@ import { configureStore, getDefaultMiddleware, combineReducers } from '@reduxjs/
 import { persistReducer, persistStore } from 'redux-persist';
 import auth from './auth';
 import common from './common';
-// import user from './user';
+import user from './user';
 
 const rootReducer = combineReducers({
     auth:auth,
     common:common,
-    // user:user
+    user:user
 });
 
 const persistConfig = {

@@ -1,5 +1,5 @@
 import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ScrollView } from 'react-native-virtualized-view'
 import { Rtext } from '../../../Components/Rtext'
 import Styles from '../../../Styles'
@@ -8,21 +8,31 @@ import { normalizeSize } from '../../../utility'
 import { ProfileOptionList } from '../../../store/static'
 import { ThemeLightGreen } from '../../../config/Colors'
 import { LogoutSuccessfully } from '../../../store/auth'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigation } from '@react-navigation/native'
 import NoResultFound from '../../Popups/NoResultFound'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { getUserProfile } from '../../../store/user'
+import { Controller } from 'react-hook-form'
 
 const Profile = () => {
     const dispatch = useDispatch();
     const navigation = useNavigation();
     const [ShowNoResultFound, setShowNoResultFound] = useState(false)
+    const userInfo = useSelector(state=> state.user.userInfo)
+    const initilize = async()=>{
+        dispatch(getUserProfile())
+    }
+    useEffect(()=>{
+        initilize();
+    },[])
+    console.log({userInfo});
   return (
     <View style={[Globalstyles.container, {backgroundColor:"#fff"}]}>
       <ScrollView>
         <View style={[Styles.globalContainer]}>
             <Rtext fontWeight='700'>My Account</Rtext>
-            <Rtext style={{color:"#747474"}}>Subhrajeet Roy Chowdhury</Rtext>
+            <Rtext style={{color:"#747474"}}>{userInfo["name"]}</Rtext>
             <TouchableOpacity onPress={()=>setShowNoResultFound(true)} style={{marginTop:16}}>
                 <Image source={require("../../../assets/images/profileImg.png")} style={{width:"100%", height:normalizeSize(85), resizeMode:"contain"}} />
 
@@ -36,7 +46,7 @@ const Profile = () => {
                         ItemSeparatorComponent={()=><View style={{height:normalizeSize(20)}} />}
                         renderItem={({item, index})=>(
                             <TouchableOpacity onPress={()=>{
-                                item.name==="Logout"? (dispatch(LogoutSuccessfully()), AsyncStorage.removeItem("@token")): navigation.navigate(item.path,{modal:false})
+                                item.name==="Logout"? (dispatch(LogoutSuccessfully()), AsyncStorage.removeItem("@token")): navigation.navigate(item.path,{modal:false,authToken:userInfo})
                             }} style={Globalstyles.row_Between}>
                                 <View style={Globalstyles.row}>
                                     <View style={[{width:normalizeSize(30), height:normalizeSize(30), borderRadius:normalizeSize(15), backgroundColor:"#BAEE4D"}, Globalstyles.center]}>
@@ -62,3 +72,4 @@ const Profile = () => {
 export default Profile
 
 const styles = StyleSheet.create({})
+

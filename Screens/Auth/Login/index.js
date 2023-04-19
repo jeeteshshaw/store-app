@@ -13,6 +13,7 @@ import { showFlashMessage, showYupValidationError } from '../../../utility';
 import { useEffect } from 'react';
 import { LoginSuccessfully } from '../../../store/auth';
 import { useDispatch } from 'react-redux';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 
@@ -49,6 +50,8 @@ const Login=(props)=>{
           console.log(res.data);
           if(res.data.success){
             dispatch(LoginSuccessfully(res.data.info));
+            await AsyncStorage.setItem("@token",res.data.info.token);
+
           }
         } catch (error) {
           console.log(error.response.data);
